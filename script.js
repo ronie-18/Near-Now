@@ -1,390 +1,390 @@
 const groceries = [
     {
-        name: 'Basmati Rice',
-        image: 'https://cdn-icons-png.flaticon.com/512/3174/3174880.png',
-        description: 'Premium long-grain basmati rice, 5kg pack. Perfect for biryanis and pulao.',
-        price: '₹450',
-        originalPrice: '₹500',
-        category: 'staples',
-        rating: 4.5,
-        reviews: 128,
-        inStock: true,
-        discount: 10
+      name: "Basmati Rice",
+      image: "https://cdn-icons-png.flaticon.com/512/3174/3174880.png",
+      description: "Premium long-grain basmati rice, 5kg pack. Perfect for biryanis and pulao.",
+      price: "₹450",
+      originalPrice: "₹500",
+      category: "staples",
+      rating: 4.5,
+      reviews: 128,
+      inStock: true,
+      discount: 10,
     },
     {
-        name: 'Toor Dal',
-        image: 'https://cdn-icons-png.flaticon.com/512/2548/2548555.png',
-        description: 'Yellow split pigeon peas, 1kg pack. Rich in protein and essential nutrients.',
-        price: '₹160',
-        originalPrice: '₹180',
-        category: 'staples',
-        rating: 4.3,
-        reviews: 95,
-        inStock: true,
-        discount: 11
+      name: "Toor Dal",
+      image: "https://cdn-icons-png.flaticon.com/512/2548/2548555.png",
+      description: "Yellow split pigeon peas, 1kg pack. Rich in protein and essential nutrients.",
+      price: "₹160",
+      originalPrice: "₹180",
+      category: "staples",
+      rating: 4.3,
+      reviews: 95,
+      inStock: true,
+      discount: 11,
     },
     {
-        name: 'Turmeric Powder',
-        image: 'https://cdn-icons-png.flaticon.com/512/5769/5769174.png',
-        description: 'Pure organic turmeric powder, 100g pack. Natural anti-inflammatory properties.',
-        price: '₹45',
-        originalPrice: '₹55',
-        category: 'spices',
-        rating: 4.7,
-        reviews: 203,
-        inStock: true,
-        discount: 18
+      name: "Turmeric Powder",
+      image: "https://cdn-icons-png.flaticon.com/512/5769/5769174.png",
+      description: "Pure organic turmeric powder, 100g pack. Natural anti-inflammatory properties.",
+      price: "₹45",
+      originalPrice: "₹55",
+      category: "spices",
+      rating: 4.7,
+      reviews: 203,
+      inStock: true,
+      discount: 18,
     },
     {
-        name: 'Garam Masala',
-        image: 'https://cdn-icons-png.flaticon.com/512/3082/3082004.png',
-        description: 'Authentic blend of ground spices, 100g pack. Perfect for Indian curries.',
-        price: '₹85',
-        originalPrice: '₹95',
-        category: 'spices',
-        rating: 4.6,
-        reviews: 156,
-        inStock: true,
-        discount: 11
+      name: "Garam Masala",
+      image: "https://cdn-icons-png.flaticon.com/512/3082/3082004.png",
+      description: "Authentic blend of ground spices, 100g pack. Perfect for Indian curries.",
+      price: "₹85",
+      originalPrice: "₹95",
+      category: "spices",
+      rating: 4.6,
+      reviews: 156,
+      inStock: true,
+      discount: 11,
     },
     {
-        name: 'Fresh Paneer',
-        image: 'https://cdn-icons-png.flaticon.com/512/2372/2372241.png',
-        description: 'Fresh cottage cheese, 200g pack. Made daily with pure milk.',
-        price: '₹80',
-        originalPrice: '₹90',
-        category: 'dairy',
-        rating: 4.4,
-        reviews: 87,
-        inStock: true,
-        discount: 11
+      name: "Fresh Paneer",
+      image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+      description: "Fresh cottage cheese, 200g pack. Made daily with pure milk.",
+      price: "₹80",
+      originalPrice: "₹90",
+      category: "dairy",
+      rating: 4.4,
+      reviews: 87,
+      inStock: true,
+      discount: 11,
     },
     {
-        name: 'Pure Cow Ghee',
-        image: 'https://cdn-icons-png.flaticon.com/512/2372/2372241.png',
-        description: 'Pure cow ghee, 500ml jar. Traditional churned for authentic taste.',
-        price: '₹450',
-        originalPrice: '₹520',
-        category: 'dairy',
-        rating: 4.8,
-        reviews: 234,
-        inStock: true,
-        discount: 13
+      name: "Pure Cow Ghee",
+      image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+      description: "Pure cow ghee, 500ml jar. Traditional churned for authentic taste.",
+      price: "₹450",
+      originalPrice: "₹520",
+      category: "dairy",
+      rating: 4.8,
+      reviews: 234,
+      inStock: true,
+      discount: 13,
     },
     {
-        name: 'Whole Wheat Atta',
-        image: 'https://cdn-icons-png.flaticon.com/512/2548/2548555.png',
-        description: 'Whole wheat flour, 5kg pack. Stone ground for better nutrition.',
-        price: '₹250',
-        originalPrice: '₹280',
-        category: 'staples',
-        rating: 4.2,
-        reviews: 167,
-        inStock: true,
-        discount: 11
+      name: "Whole Wheat Atta",
+      image: "https://cdn-icons-png.flaticon.com/512/2548/2548555.png",
+      description: "Whole wheat flour, 5kg pack. Stone ground for better nutrition.",
+      price: "₹250",
+      originalPrice: "₹280",
+      category: "staples",
+      rating: 4.2,
+      reviews: 167,
+      inStock: true,
+      discount: 11,
     },
     {
-        name: 'Assam Tea Powder',
-        image: 'https://cdn-icons-png.flaticon.com/512/1864/1864001.png',
-        description: 'Premium Assam tea leaves, 250g pack. Strong and aromatic blend.',
-        price: '₹120',
-        originalPrice: '₹140',
-        category: 'beverages',
-        rating: 4.5,
-        reviews: 145,
-        inStock: true,
-        discount: 14
+      name: "Assam Tea Powder",
+      image: "https://cdn-icons-png.flaticon.com/512/1864/1864001.png",
+      description: "Premium Assam tea leaves, 250g pack. Strong and aromatic blend.",
+      price: "₹120",
+      originalPrice: "₹140",
+      category: "beverages",
+      rating: 4.5,
+      reviews: 145,
+      inStock: true,
+      discount: 14,
     },
     {
-        name: 'Masala Papad',
-        image: 'https://cdn-icons-png.flaticon.com/512/2372/2372241.png',
-        description: 'Spicy lentil wafers, 200g pack. Crispy and flavorful snack.',
-        price: '₹60',
-        originalPrice: '₹70',
-        category: 'snacks',
-        rating: 4.1,
-        reviews: 76,
-        inStock: true,
-        discount: 14
+      name: "Masala Papad",
+      image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+      description: "Spicy lentil wafers, 200g pack. Crispy and flavorful snack.",
+      price: "₹60",
+      originalPrice: "₹70",
+      category: "snacks",
+      rating: 4.1,
+      reviews: 76,
+      inStock: true,
+      discount: 14,
     },
     {
-        name: 'Chana Dal',
-        image: 'https://cdn-icons-png.flaticon.com/512/2548/2548555.png',
-        description: 'Split Bengal gram, 1kg pack. High protein content and great taste.',
-        price: '₹130',
-        originalPrice: '₹150',
-        category: 'staples',
-        rating: 4.3,
-        reviews: 112,
-        inStock: true,
-        discount: 13
+      name: "Chana Dal",
+      image: "https://cdn-icons-png.flaticon.com/512/2548/2548555.png",
+      description: "Split Bengal gram, 1kg pack. High protein content and great taste.",
+      price: "₹130",
+      originalPrice: "₹150",
+      category: "staples",
+      rating: 4.3,
+      reviews: 112,
+      inStock: true,
+      discount: 13,
     },
     {
-        name: 'Red Chili Powder',
-        image: 'https://cdn-icons-png.flaticon.com/512/5769/5769174.png',
-        description: 'Premium quality red chili powder, 200g pack. Adds perfect heat to dishes.',
-        price: '₹75',
-        originalPrice: '₹85',
-        category: 'spices',
-        rating: 4.4,
-        reviews: 89,
-        inStock: true,
-        discount: 12
+      name: "Red Chili Powder",
+      image: "https://cdn-icons-png.flaticon.com/512/5769/5769174.png",
+      description: "Premium quality red chili powder, 200g pack. Adds perfect heat to dishes.",
+      price: "₹75",
+      originalPrice: "₹85",
+      category: "spices",
+      rating: 4.4,
+      reviews: 89,
+      inStock: true,
+      discount: 12,
     },
     {
-        name: 'Coconut Oil',
-        image: 'https://cdn-icons-png.flaticon.com/512/2372/2372241.png',
-        description: 'Pure coconut oil, 500ml bottle. Cold-pressed for maximum nutrition.',
-        price: '₹180',
-        originalPrice: '₹200',
-        category: 'dairy',
-        rating: 4.6,
-        reviews: 156,
-        inStock: true,
-        discount: 10
+      name: "Coconut Oil",
+      image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+      description: "Pure coconut oil, 500ml bottle. Cold-pressed for maximum nutrition.",
+      price: "₹180",
+      originalPrice: "₹200",
+      category: "dairy",
+      rating: 4.6,
+      reviews: 156,
+      inStock: true,
+      discount: 10,
     },
     {
-        name: 'Onions',
-        image: 'https://cdn-icons-png.flaticon.com/512/2909/2909761.png',
-        description: 'Fresh red onions, 1kg pack. Essential for Indian cooking.',
-        price: '₹40',
-        originalPrice: '₹50',
-        category: 'vegetables',
-        rating: 4.2,
-        reviews: 234,
-        inStock: true,
-        discount: 20
+      name: "Onions",
+      image: "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
+      description: "Fresh red onions, 1kg pack. Essential for Indian cooking.",
+      price: "₹40",
+      originalPrice: "₹50",
+      category: "vegetables",
+      rating: 4.2,
+      reviews: 234,
+      inStock: true,
+      discount: 20,
     },
     {
-        name: 'Potatoes',
-        image: 'https://cdn-icons-png.flaticon.com/512/2909/2909761.png',
-        description: 'Fresh potatoes, 2kg pack. Versatile vegetable for various dishes.',
-        price: '₹60',
-        originalPrice: '₹70',
-        category: 'vegetables',
-        rating: 4.1,
-        reviews: 189,
-        inStock: true,
-        discount: 14
+      name: "Potatoes",
+      image: "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
+      description: "Fresh potatoes, 2kg pack. Versatile vegetable for various dishes.",
+      price: "₹60",
+      originalPrice: "₹70",
+      category: "vegetables",
+      rating: 4.1,
+      reviews: 189,
+      inStock: true,
+      discount: 14,
     },
     {
-        name: 'Tomatoes',
-        image: 'https://cdn-icons-png.flaticon.com/512/2909/2909761.png',
-        description: 'Fresh ripe tomatoes, 1kg pack. Perfect for curries and salads.',
-        price: '₹35',
-        originalPrice: '₹45',
-        category: 'vegetables',
-        rating: 4.3,
-        reviews: 167,
-        inStock: true,
-        discount: 22
+      name: "Tomatoes",
+      image: "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
+      description: "Fresh ripe tomatoes, 1kg pack. Perfect for curries and salads.",
+      price: "₹35",
+      originalPrice: "₹45",
+      category: "vegetables",
+      rating: 4.3,
+      reviews: 167,
+      inStock: true,
+      discount: 22,
     },
     {
-        name: 'Namkeen Mix',
-        image: 'https://cdn-icons-png.flaticon.com/512/2372/2372241.png',
-        description: 'Assorted namkeen mix, 250g pack. Perfect tea-time snack.',
-        price: '₹95',
-        originalPrice: '₹110',
-        category: 'snacks',
-        rating: 4.0,
-        reviews: 78,
-        inStock: true,
-        discount: 14
+      name: "Namkeen Mix",
+      image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+      description: "Assorted namkeen mix, 250g pack. Perfect tea-time snack.",
+      price: "₹95",
+      originalPrice: "₹110",
+      category: "snacks",
+      rating: 4.0,
+      reviews: 78,
+      inStock: true,
+      discount: 14,
     },
     {
-        name: 'Cardamom',
-        image: 'https://cdn-icons-png.flaticon.com/512/3082/3082004.png',
-        description: 'Premium green cardamom, 50g pack. Aromatic spice for desserts.',
-        price: '₹320',
-        originalPrice: '₹350',
-        category: 'spices',
-        rating: 4.8,
-        reviews: 145,
-        inStock: true,
-        discount: 9
+      name: "Cardamom",
+      image: "https://cdn-icons-png.flaticon.com/512/3082/3082004.png",
+      description: "Premium green cardamom, 50g pack. Aromatic spice for desserts.",
+      price: "₹320",
+      originalPrice: "₹350",
+      category: "spices",
+      rating: 4.8,
+      reviews: 145,
+      inStock: true,
+      discount: 9,
     },
     {
-        name: 'Masala Chai',
-        image: 'https://cdn-icons-png.flaticon.com/512/1864/1864001.png',
-        description: 'Spiced tea blend, 200g pack. Perfect for authentic Indian chai.',
-        price: '₹140',
-        originalPrice: '₹160',
-        category: 'beverages',
-        rating: 4.5,
-        reviews: 198,
-        inStock: true,
-        discount: 13
+      name: "Masala Chai",
+      image: "https://cdn-icons-png.flaticon.com/512/1864/1864001.png",
+      description: "Spiced tea blend, 200g pack. Perfect for authentic Indian chai.",
+      price: "₹140",
+      originalPrice: "₹160",
+      category: "beverages",
+      rating: 4.5,
+      reviews: 198,
+      inStock: true,
+      discount: 13,
     },
     {
-        name: 'Yogurt',
-        image: 'https://cdn-icons-png.flaticon.com/512/2372/2372241.png',
-        description: 'Fresh yogurt, 500g pack. Creamy and rich in probiotics.',
-        price: '₹45',
-        originalPrice: '₹55',
-        category: 'dairy',
-        rating: 4.3,
-        reviews: 123,
-        inStock: true,
-        discount: 18
+      name: "Yogurt",
+      image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+      description: "Fresh yogurt, 500g pack. Creamy and rich in probiotics.",
+      price: "₹45",
+      originalPrice: "₹55",
+      category: "dairy",
+      rating: 4.3,
+      reviews: 123,
+      inStock: true,
+      discount: 18,
     },
     {
-        name: 'Biscuits Assorted',
-        image: 'https://cdn-icons-png.flaticon.com/512/2372/2372241.png',
-        description: 'Mixed biscuits pack, 400g. Variety of flavors for the whole family.',
-        price: '₹85',
-        originalPrice: '₹100',
-        category: 'snacks',
-        rating: 4.2,
-        reviews: 156,
-        inStock: true,
-        discount: 15
-    }
-  ];
+      name: "Biscuits Assorted",
+      image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+      description: "Mixed biscuits pack, 400g. Variety of flavors for the whole family.",
+      price: "₹85",
+      originalPrice: "₹100",
+      category: "snacks",
+      rating: 4.2,
+      reviews: 156,
+      inStock: true,
+      discount: 15,
+    },
+  ]
   
   // Global variables
-  let cart = [];
-  let wishlist = [];
-  let currentCategory = 'all';
-  let currentView = 'grid';
-  let currentSort = 'default';
-  let isLoggedIn = false;
-  let currentUser = null;
+  let cart = []
+  let wishlist = []
+  let currentCategory = "all"
+  let currentView = "grid"
+  let currentSort = "default"
+  let isLoggedIn = false
+  let currentUser = null
   
   // DOM elements
-  const groceryList = document.getElementById('grocery-list');
-  const cartIcon = document.getElementById('cart-icon');
-  const wishlistIcon = document.getElementById('wishlist-icon');
-  const cartSidebar = document.getElementById('cart-sidebar');
-  const wishlistSidebar = document.getElementById('wishlist-sidebar');
-  const cartItems = document.getElementById('cart-items');
-  const wishlistItems = document.getElementById('wishlist-items');
-  const cartCount = document.querySelector('.cart-count');
-  const wishlistCount = document.querySelector('.wishlist-count');
-  const cartTotal = document.getElementById('cart-total');
-  const closeCart = document.querySelector('.close-cart');
-  const closeWishlist = document.querySelector('.close-wishlist');
-  const searchInput = document.getElementById('search-input');
-  const searchBtn = document.getElementById('search-btn');
-  const overlay = document.getElementById('overlay');
-  const productCount = document.getElementById('product-count');
-  const sortSelect = document.getElementById('sort-select');
-  const backToTop = document.getElementById('back-to-top');
-  const loadingScreen = document.getElementById('loading-screen');
-  const currentYear = document.getElementById('current-year');
-  const loginBtn = document.getElementById('login-btn');
-  const signupBtn = document.getElementById('signup-btn');
-  const loginModal = document.getElementById('login-modal');
-  const signupModal = document.getElementById('signup-modal');
-  const closeLoginModal = document.getElementById('close-login-modal');
-  const closeSignupModal = document.getElementById('close-signup-modal');
-  const switchToSignup = document.getElementById('switch-to-signup');
-  const switchToLogin = document.getElementById('switch-to-login');
-  const loginForm = document.getElementById('login-form');
-  const signupForm = document.getElementById('signup-form');
+  const groceryList = document.getElementById("grocery-list")
+  const cartIcon = document.getElementById("cart-icon")
+  const wishlistIcon = document.getElementById("wishlist-icon")
+  const cartSidebar = document.getElementById("cart-sidebar")
+  const wishlistSidebar = document.getElementById("wishlist-sidebar")
+  const cartItems = document.getElementById("cart-items")
+  const wishlistItems = document.getElementById("wishlist-items")
+  const cartCount = document.querySelector(".cart-count")
+  const wishlistCount = document.querySelector(".wishlist-count")
+  const cartTotal = document.getElementById("cart-total")
+  const closeCart = document.querySelector(".close-cart")
+  const closeWishlist = document.querySelector(".close-wishlist")
+  const searchInput = document.getElementById("search-input")
+  const searchBtn = document.getElementById("search-btn")
+  const overlay = document.getElementById("overlay")
+  const productCount = document.getElementById("product-count")
+  const sortSelect = document.getElementById("sort-select")
+  const backToTop = document.getElementById("back-to-top")
+  const loadingScreen = document.getElementById("loading-screen")
+  const currentYear = document.getElementById("current-year")
+  const loginBtn = document.getElementById("login-btn")
+  const signupBtn = document.getElementById("signup-btn")
+  const loginModal = document.getElementById("login-modal")
+  const signupModal = document.getElementById("signup-modal")
+  const closeLoginModal = document.getElementById("close-login-modal")
+  const closeSignupModal = document.getElementById("close-signup-modal")
+  const switchToSignup = document.getElementById("switch-to-signup")
+  const switchToLogin = document.getElementById("switch-to-login")
+  const loginForm = document.getElementById("login-form")
+  const signupForm = document.getElementById("signup-form")
   
   // Initialize the application
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", () => {
     // Show loading screen
     setTimeout(() => {
-        loadingScreen.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    }, 1500);
+      loadingScreen.classList.add("hidden")
+      document.body.style.overflow = "auto"
+    }, 1500)
   
     // Set current year in footer
-    currentYear.textContent = new Date().getFullYear();
+    currentYear.textContent = new Date().getFullYear()
   
-    displayGroceries(groceries);
-    setupEventListeners();
-    loadCartFromStorage();
-    loadWishlistFromStorage();
-    updateProductCount();
-    checkLoginStatus();
-  });
+    displayGroceries(groceries)
+    setupEventListeners()
+    loadCartFromStorage()
+    loadWishlistFromStorage()
+    updateProductCount()
+    checkLoginStatus()
+  })
   
   // Setup event listeners
   function setupEventListeners() {
     // Cart and wishlist toggles
-    cartIcon.addEventListener('click', () => toggleSidebar('cart'));
-    wishlistIcon.addEventListener('click', () => toggleSidebar('wishlist'));
-    closeCart.addEventListener('click', () => closeSidebar('cart'));
-    closeWishlist.addEventListener('click', () => closeSidebar('wishlist'));
-    overlay.addEventListener('click', closeAllSidebars);
+    cartIcon.addEventListener("click", () => toggleSidebar("cart"))
+    wishlistIcon.addEventListener("click", () => toggleSidebar("wishlist"))
+    closeCart.addEventListener("click", () => closeSidebar("cart"))
+    closeWishlist.addEventListener("click", () => closeSidebar("wishlist"))
+    overlay.addEventListener("click", closeAllSidebars)
   
     // Search functionality
-    searchBtn.addEventListener('click', searchGroceries);
-    searchInput.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') searchGroceries();
-    });
-    searchInput.addEventListener('input', debounce(searchGroceries, 300));
+    searchBtn.addEventListener("click", searchGroceries)
+    searchInput.addEventListener("keyup", (e) => {
+      if (e.key === "Enter") searchGroceries()
+    })
+    searchInput.addEventListener("input", debounce(searchGroceries, 300))
   
     // Trending search tags
-    document.querySelectorAll('.trending-tag').forEach(tag => {
-        tag.addEventListener('click', (e) => {
-            const searchTerm = e.target.getAttribute('data-search');
-            searchInput.value = searchTerm;
-            searchGroceries();
-        });
-    });
+    document.querySelectorAll(".trending-tag").forEach((tag) => {
+      tag.addEventListener("click", (e) => {
+        const searchTerm = e.target.getAttribute("data-search")
+        searchInput.value = searchTerm
+        searchGroceries()
+      })
+    })
   
     // Navigation and filters
-    document.querySelectorAll('.nav-link, .filter-tag').forEach(link => {
-        link.addEventListener('click', handleCategoryFilter);
-    });
+    document.querySelectorAll(".nav-link, .filter-tag").forEach((link) => {
+      link.addEventListener("click", handleCategoryFilter)
+    })
   
     // View toggle
-    document.querySelectorAll('.view-btn').forEach(btn => {
-        btn.addEventListener('click', handleViewToggle);
-    });
+    document.querySelectorAll(".view-btn").forEach((btn) => {
+      btn.addEventListener("click", handleViewToggle)
+    })
   
     // Sort functionality
-    sortSelect.addEventListener('change', handleSort);
+    sortSelect.addEventListener("change", handleSort)
   
     // Back to top button
-    window.addEventListener('scroll', handleScroll);
-    backToTop.addEventListener('click', scrollToTop);
+    window.addEventListener("scroll", handleScroll)
+    backToTop.addEventListener("click", scrollToTop)
   
     // Auth modals
-    if (loginBtn) loginBtn.addEventListener('click', () => openModal('login'));
-    if (signupBtn) signupBtn.addEventListener('click', () => openModal('signup'));
-    closeLoginModal.addEventListener('click', () => closeModal('login'));
-    closeSignupModal.addEventListener('click', () => closeModal('signup'));
-    switchToSignup.addEventListener('click', (e) => {
-        e.preventDefault();
-        closeModal('login');
-        openModal('signup');
-    });
-    switchToLogin.addEventListener('click', (e) => {
-        e.preventDefault();
-        closeModal('signup');
-        openModal('login');
-    });
+    if (loginBtn) loginBtn.addEventListener("click", () => openModal("login"))
+    if (signupBtn) signupBtn.addEventListener("click", () => openModal("signup"))
+    closeLoginModal.addEventListener("click", () => closeModal("login"))
+    closeSignupModal.addEventListener("click", () => closeModal("signup"))
+    switchToSignup.addEventListener("click", (e) => {
+      e.preventDefault()
+      closeModal("login")
+      openModal("signup")
+    })
+    switchToLogin.addEventListener("click", (e) => {
+      e.preventDefault()
+      closeModal("signup")
+      openModal("login")
+    })
   
     // Auth forms
-    loginForm.addEventListener('submit', handleLogin);
-    signupForm.addEventListener('submit', handleSignup);
+    loginForm.addEventListener("submit", handleLogin)
+    signupForm.addEventListener("submit", handleSignup)
   
     // Keyboard shortcuts
-    document.addEventListener('keydown', handleKeyboardShortcuts);
+    document.addEventListener("keydown", handleKeyboardShortcuts)
   }
   
   // Display groceries with enhanced UI
   function displayGroceries(items) {
-    groceryList.innerHTML = '';
-    groceryList.className = `products-grid ${currentView}-view`;
-    
+    groceryList.innerHTML = ""
+    groceryList.className = `products-grid ${currentView}-view`
+  
     items.forEach((item, index) => {
-        const div = document.createElement('div');
-        div.className = 'product-card fade-in';
-        div.style.animationDelay = `${index * 0.05}s`;
-        
-        const isInWishlist = wishlist.some(w => w.name === item.name);
-        const discountBadge = item.discount ? `<div class="discount-badge">-${item.discount}%</div>` : '';
-        const originalPriceHTML = item.originalPrice ? `<span class="original-price">${item.originalPrice}</span>` : '';
-        
-        div.innerHTML = `
+      const div = document.createElement("div")
+      div.className = "product-card fade-in"
+      div.style.animationDelay = `${index * 0.05}s`
+  
+      const isInWishlist = wishlist.some((w) => w.name === item.name)
+      const discountBadge = item.discount ? `<div class="discount-badge">-${item.discount}%</div>` : ""
+      const originalPriceHTML = item.originalPrice ? `<span class="original-price">${item.originalPrice}</span>` : ""
+  
+      div.innerHTML = `
             ${discountBadge}
             <div class="product-header">
-                <button class="product-action-btn wishlist-btn ${isInWishlist ? 'active' : ''}" onclick="toggleWishlist('${item.name}')">
+                <button class="product-action-btn wishlist-btn ${isInWishlist ? "active" : ""}" onclick="toggleWishlist('${item.name}')">
                     <i class="fas fa-heart"></i>
                 </button>
                 <button class="product-action-btn quick-view-btn" onclick="quickView('${item.name}')">
@@ -415,215 +415,219 @@ const groceries = [
                     </button>
                 </div>
             </div>
-        `;
-        groceryList.appendChild(div);
-    });
-    
-    updateProductCount(items.length);
+        `
+      groceryList.appendChild(div)
+    })
+  
+    updateProductCount(items.length)
   }
   
   // Generate star rating
   function generateStars(rating) {
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
-    let stars = '';
-    
+    const fullStars = Math.floor(rating)
+    const hasHalfStar = rating % 1 !== 0
+    let stars = ""
+  
     for (let i = 0; i < fullStars; i++) {
-        stars += '<i class="fas fa-star"></i>';
+      stars += '<i class="fas fa-star"></i>'
     }
-    
+  
     if (hasHalfStar) {
-        stars += '<i class="fas fa-star-half-alt"></i>';
+      stars += '<i class="fas fa-star-half-alt"></i>'
     }
-    
-    const emptyStars = 5 - Math.ceil(rating);
+  
+    const emptyStars = 5 - Math.ceil(rating)
     for (let i = 0; i < emptyStars; i++) {
-        stars += '<i class="far fa-star"></i>';
+      stars += '<i class="far fa-star"></i>'
     }
-    
-    return stars;
+  
+    return stars
   }
   
   // Filter groceries by category
   function filterByCategory(category) {
-    currentCategory = category;
-    const filtered = category === 'all' 
-        ? groceries 
-        : groceries.filter(item => item.category === category);
-    
-    const sorted = sortGroceries(filtered, currentSort);
-    displayGroceries(sorted);
-    
+    currentCategory = category
+    const filtered = category === "all" ? groceries : groceries.filter((item) => item.category === category)
+  
+    const sorted = sortGroceries(filtered, currentSort)
+    displayGroceries(sorted)
+  
     // Update active category
-    document.querySelectorAll('.nav-link, .filter-tag').forEach(link => {
-        link.classList.remove('active');
-    });
-    
-    document.querySelectorAll(`[data-category="${category}"]`).forEach(link => {
-        link.classList.add('active');
-    });
+    document.querySelectorAll(".nav-link, .filter-tag").forEach((link) => {
+      link.classList.remove("active")
+    })
+  
+    document.querySelectorAll(`[data-category="${category}"]`).forEach((link) => {
+      link.classList.add("active")
+    })
   }
   
   // Handle category filter clicks
   function handleCategoryFilter(e) {
-    e.preventDefault();
-    const category = e.target.getAttribute('data-category') || 'all';
-    filterByCategory(category);
+    e.preventDefault()
+    const category = e.target.getAttribute("data-category") || "all"
+    filterByCategory(category)
   }
   
   // Search functionality with debouncing
   function searchGroceries() {
-    const searchTerm = searchInput.value.toLowerCase().trim();
-    let filtered = groceries;
-    
+    const searchTerm = searchInput.value.toLowerCase().trim()
+    let filtered = groceries
+  
     if (searchTerm) {
-        filtered = groceries.filter(item => 
-            item.name.toLowerCase().includes(searchTerm) ||
-            item.description.toLowerCase().includes(searchTerm) ||
-            item.category.toLowerCase().includes(searchTerm)
-        );
+      filtered = groceries.filter(
+        (item) =>
+          item.name.toLowerCase().includes(searchTerm) ||
+          item.description.toLowerCase().includes(searchTerm) ||
+          item.category.toLowerCase().includes(searchTerm),
+      )
     }
-    
-    if (currentCategory !== 'all') {
-        filtered = filtered.filter(item => item.category === currentCategory);
+  
+    if (currentCategory !== "all") {
+      filtered = filtered.filter((item) => item.category === currentCategory)
     }
-    
-    const sorted = sortGroceries(filtered, currentSort);
-    displayGroceries(sorted);
-    
+  
+    const sorted = sortGroceries(filtered, currentSort)
+    displayGroceries(sorted)
+  
     // Show search results message
     if (searchTerm && filtered.length === 0) {
-        showNotification('No products found for your search.', 'warning');
+      showNotification("No products found for your search.", "warning")
     }
   }
   
   // Debounce function
   function debounce(func, wait) {
-    let timeout;
+    let timeout
     return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+      const later = () => {
+        clearTimeout(timeout)
+        func(...args)
+      }
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+    }
   }
   
   // Sort groceries
   function sortGroceries(items, sortType) {
-    const sortedItems = [...items];
-    
+    const sortedItems = [...items]
+  
     switch (sortType) {
-        case 'price-low':
-            return sortedItems.sort((a, b) => parseFloat(a.price.replace('₹', '')) - parseFloat(b.price.replace('₹', '')));
-        case 'price-high':
-            return sortedItems.sort((a, b) => parseFloat(b.price.replace('₹', '')) - parseFloat(a.price.replace('₹', '')));
-        case 'name':
-            return sortedItems.sort((a, b) => a.name.localeCompare(b.name));
-        case 'rating':
-            return sortedItems.sort((a, b) => b.rating - a.rating);
-        case 'discount':
-            return sortedItems.sort((a, b) => (b.discount || 0) - (a.discount || 0));
-        default:
-            return sortedItems;
+      case "price-low":
+        return sortedItems.sort(
+          (a, b) => Number.parseFloat(a.price.replace("₹", "")) - Number.parseFloat(b.price.replace("₹", "")),
+        )
+      case "price-high":
+        return sortedItems.sort(
+          (a, b) => Number.parseFloat(b.price.replace("₹", "")) - Number.parseFloat(a.price.replace("₹", "")),
+        )
+      case "name":
+        return sortedItems.sort((a, b) => a.name.localeCompare(b.name))
+      case "rating":
+        return sortedItems.sort((a, b) => b.rating - a.rating)
+      case "discount":
+        return sortedItems.sort((a, b) => (b.discount || 0) - (a.discount || 0))
+      default:
+        return sortedItems
     }
   }
   
   // Handle sort change
   function handleSort(e) {
-    currentSort = e.target.value;
-    const currentItems = getCurrentItems();
-    const sorted = sortGroceries(currentItems, currentSort);
-    displayGroceries(sorted);
+    currentSort = e.target.value
+    const currentItems = getCurrentItems()
+    const sorted = sortGroceries(currentItems, currentSort)
+    displayGroceries(sorted)
   }
   
   // Get current filtered items
   function getCurrentItems() {
-    const searchTerm = searchInput.value.toLowerCase().trim();
-    let filtered = groceries;
-    
+    const searchTerm = searchInput.value.toLowerCase().trim()
+    let filtered = groceries
+  
     if (searchTerm) {
-        filtered = groceries.filter(item => 
-            item.name.toLowerCase().includes(searchTerm) ||
-            item.description.toLowerCase().includes(searchTerm) ||
-            item.category.toLowerCase().includes(searchTerm)
-        );
+      filtered = groceries.filter(
+        (item) =>
+          item.name.toLowerCase().includes(searchTerm) ||
+          item.description.toLowerCase().includes(searchTerm) ||
+          item.category.toLowerCase().includes(searchTerm),
+      )
     }
-    
-    if (currentCategory !== 'all') {
-        filtered = filtered.filter(item => item.category === currentCategory);
+  
+    if (currentCategory !== "all") {
+      filtered = filtered.filter((item) => item.category === currentCategory)
     }
-    
-    return filtered;
+  
+    return filtered
   }
   
   // Handle view toggle
   function handleViewToggle(e) {
-    document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
-    e.target.classList.add('active');
-    
-    currentView = e.target.getAttribute('data-view');
-    groceryList.className = `products-grid ${currentView}-view`;
+    document.querySelectorAll(".view-btn").forEach((btn) => btn.classList.remove("active"))
+    e.target.classList.add("active")
+  
+    currentView = e.target.getAttribute("data-view")
+    groceryList.className = `products-grid ${currentView}-view`
   }
   
   // Cart functions
   function addToCart(itemName) {
-    const item = groceries.find(g => g.name === itemName);
-    const existingItem = cart.find(i => i.name === itemName);
-    
+    const item = groceries.find((g) => g.name === itemName)
+    const existingItem = cart.find((i) => i.name === itemName)
+  
     if (existingItem) {
-        existingItem.quantity += 1;
+      existingItem.quantity += 1
     } else {
-        cart.push({ ...item, quantity: 1 });
+      cart.push({ ...item, quantity: 1 })
     }
-    
-    updateCart();
-    saveCartToStorage();
-    showNotification(`${item.name} added to cart!`, 'success');
-    animateCartIcon();
+  
+    updateCart()
+    saveCartToStorage()
+    showNotification(`${item.name} added to cart!`, "success")
+    animateCartIcon()
   }
   
   function removeFromCart(itemName) {
-    cart = cart.filter(item => item.name !== itemName);
-    updateCart();
-    saveCartToStorage();
-    showNotification('Item removed from cart', 'info');
+    cart = cart.filter((item) => item.name !== itemName)
+    updateCart()
+    saveCartToStorage()
+    showNotification("Item removed from cart", "info")
   }
   
   function updateQuantity(itemName, delta) {
-    const item = cart.find(i => i.name === itemName);
+    const item = cart.find((i) => i.name === itemName)
     if (item) {
-        item.quantity += delta;
-        if (item.quantity <= 0) {
-            removeFromCart(itemName);
-        } else {
-            updateCart();
-            saveCartToStorage();
-        }
+      item.quantity += delta
+      if (item.quantity <= 0) {
+        removeFromCart(itemName)
+      } else {
+        updateCart()
+        saveCartToStorage()
+      }
     }
   }
   
   function updateCart() {
-    cartItems.innerHTML = '';
-    let total = 0;
-    
+    cartItems.innerHTML = ""
+    let total = 0
+  
     if (cart.length === 0) {
-        cartItems.innerHTML = `
+      cartItems.innerHTML = `
             <div class="empty-cart">
                 <i class="fas fa-shopping-cart"></i>
                 <p>Your cart is empty</p>
                 <small>Add some delicious items to get started!</small>
             </div>
-        `;
+        `
     } else {
-        cart.forEach(item => {
-            const price = parseFloat(item.price.replace('₹', ''));
-            total += price * item.quantity;
-            
-            const div = document.createElement('div');
-            div.className = 'cart-item';
-            div.innerHTML = `
+      cart.forEach((item) => {
+        const price = Number.parseFloat(item.price.replace("₹", ""))
+        total += price * item.quantity
+  
+        const div = document.createElement("div")
+        div.className = "cart-item"
+        div.innerHTML = `
                 <img src="${item.image}" alt="${item.name}">
                 <div class="cart-item-details">
                     <h4>${item.name}</h4>
@@ -641,49 +645,49 @@ const groceries = [
                 <button onclick="removeFromCart('${item.name}')" class="remove-item">
                     <i class="fas fa-times"></i>
                 </button>
-            `;
-            cartItems.appendChild(div);
-        });
+            `
+        cartItems.appendChild(div)
+      })
     }
-    
-    cartTotal.textContent = `₹${total.toFixed(2)}`;
-    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+  
+    cartTotal.textContent = `₹${total.toFixed(2)}`
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0)
   }
   
   // Wishlist functions
   function toggleWishlist(itemName) {
-    const item = groceries.find(g => g.name === itemName);
-    const existingIndex = wishlist.findIndex(w => w.name === itemName);
-    
+    const item = groceries.find((g) => g.name === itemName)
+    const existingIndex = wishlist.findIndex((w) => w.name === itemName)
+  
     if (existingIndex > -1) {
-        wishlist.splice(existingIndex, 1);
-        showNotification(`${item.name} removed from wishlist`, 'info');
+      wishlist.splice(existingIndex, 1)
+      showNotification(`${item.name} removed from wishlist`, "info")
     } else {
-        wishlist.push(item);
-        showNotification(`${item.name} added to wishlist!`, 'success');
+      wishlist.push(item)
+      showNotification(`${item.name} added to wishlist!`, "success")
     }
-    
-    updateWishlist();
-    saveWishlistToStorage();
-    updateWishlistButtons();
+  
+    updateWishlist()
+    saveWishlistToStorage()
+    updateWishlistButtons()
   }
   
   function updateWishlist() {
-    wishlistItems.innerHTML = '';
-    
+    wishlistItems.innerHTML = ""
+  
     if (wishlist.length === 0) {
-        wishlistItems.innerHTML = `
+      wishlistItems.innerHTML = `
             <div class="empty-wishlist">
                 <i class="fas fa-heart"></i>
                 <p>Your wishlist is empty</p>
                 <small>Save your favorite items here!</small>
             </div>
-        `;
+        `
     } else {
-        wishlist.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'wishlist-item';
-            div.innerHTML = `
+      wishlist.forEach((item) => {
+        const div = document.createElement("div")
+        div.className = "wishlist-item"
+        div.innerHTML = `
                 <img src="${item.image}" alt="${item.name}">
                 <div class="wishlist-item-details">
                     <h4>${item.name}</h4>
@@ -695,283 +699,432 @@ const groceries = [
                 <button onclick="toggleWishlist('${item.name}')" class="remove-item">
                     <i class="fas fa-times"></i>
                 </button>
-            `;
-            wishlistItems.appendChild(div);
-        });
+            `
+        wishlistItems.appendChild(div)
+      })
     }
-    
-    wishlistCount.textContent = wishlist.length;
+  
+    wishlistCount.textContent = wishlist.length
   }
   
   function updateWishlistButtons() {
-    document.querySelectorAll('.wishlist-btn').forEach(btn => {
-        const itemName = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
-        const isInWishlist = wishlist.some(w => w.name === itemName);
-        btn.classList.toggle('active', isInWishlist);
-    });
+    document.querySelectorAll(".wishlist-btn").forEach((btn) => {
+      const itemName = btn.getAttribute("onclick").match(/'([^']+)'/)[1]
+      const isInWishlist = wishlist.some((w) => w.name === itemName)
+      btn.classList.toggle("active", isInWishlist)
+    })
   }
   
   // Sidebar functions
   function toggleSidebar(type) {
-    const sidebar = type === 'cart' ? cartSidebar : wishlistSidebar;
-    const isOpen = sidebar.classList.contains('open');
-    
-    closeAllSidebars();
-    
+    const sidebar = type === "cart" ? cartSidebar : wishlistSidebar
+    const isOpen = sidebar.classList.contains("open")
+  
+    closeAllSidebars()
+  
     if (!isOpen) {
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+      sidebar.classList.add("open")
+      overlay.classList.add("active")
+      document.body.style.overflow = "hidden"
     }
   }
   
   function closeSidebar(type) {
-    const sidebar = type === 'cart' ? cartSidebar : wishlistSidebar;
-    sidebar.classList.remove('open');
-    overlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    const sidebar = type === "cart" ? cartSidebar : wishlistSidebar
+    sidebar.classList.remove("open")
+    overlay.classList.remove("active")
+    document.body.style.overflow = "auto"
   }
   
   function closeAllSidebars() {
-    cartSidebar.classList.remove('open');
-    wishlistSidebar.classList.remove('open');
-    loginModal.classList.remove('open');
-    signupModal.classList.remove('open');
-    overlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    cartSidebar.classList.remove("open")
+    wishlistSidebar.classList.remove("open")
+    loginModal.classList.remove("open")
+    signupModal.classList.remove("open")
+    overlay.classList.remove("active")
+    document.body.style.overflow = "auto"
   }
   
   // Auth modal functions
   function openModal(type) {
-    closeAllSidebars();
-    
-    const modal = type === 'login' ? loginModal : signupModal;
-    modal.classList.add('open');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    closeAllSidebars()
+  
+    const modal = type === "login" ? loginModal : signupModal
+    modal.classList.add("open")
+    overlay.classList.add("active")
+    document.body.style.overflow = "hidden"
   }
   
   function closeModal(type) {
-    const modal = type === 'login' ? loginModal : signupModal;
-    modal.classList.remove('open');
-    overlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    const modal = type === "login" ? loginModal : signupModal
+    modal.classList.remove("open")
+    overlay.classList.remove("active")
+    document.body.style.overflow = "auto"
+  
+    // Reset forms when closing
+    if (type === "login") {
+      resetLoginForm()
+    } else {
+      resetSignupForm()
+    }
   }
   
   // Auth functions
+  let loginOtpTimer = null
+  let signupOtpTimer = null
+  const loginTimerCount = 30
+  const signupTimerCount = 30
+  
   function handleLogin(e) {
-    e.preventDefault();
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
-    
-    // Simulate login (in a real app, this would be an API call)
-    setTimeout(() => {
-        isLoggedIn = true;
-        currentUser = { email, name: email.split('@')[0] };
-        saveUserToStorage();
-        updateAuthUI();
-        closeModal('login');
-        showNotification('Login successful! Welcome back.', 'success');
-    }, 1000);
+    e.preventDefault()
+    const phone = document.getElementById("login-phone").value
+    const otpSection = document.getElementById("login-otp-section")
+    const submitBtn = document.getElementById("login-submit-btn")
+  
+    if (otpSection.style.display === "none") {
+      // First step: Send OTP
+      if (phone.length !== 10) {
+        showNotification("Please enter a valid 10-digit phone number", "error")
+        return
+      }
+  
+      // Simulate sending OTP
+      showNotification("OTP sent to +91 " + phone, "success")
+      otpSection.style.display = "block"
+      submitBtn.textContent = "Verify OTP"
+      startOtpTimer("login")
+  
+      // Focus first OTP input
+      document.querySelector("#login-otp-section .otp-digit").focus()
+    } else {
+      // Second step: Verify OTP
+      const otpDigits = document.querySelectorAll("#login-otp-section .otp-digit")
+      const otp = Array.from(otpDigits)
+        .map((input) => input.value)
+        .join("")
+  
+      if (otp.length !== 4) {
+        showNotification("Please enter the complete 4-digit OTP", "error")
+        return
+      }
+  
+      // Simulate OTP verification
+      setTimeout(() => {
+        isLoggedIn = true
+        currentUser = { phone: "+91" + phone, name: "User" }
+        saveUserToStorage()
+        updateAuthUI()
+        closeModal("login")
+        resetLoginForm()
+        showNotification("Login successful! Welcome back.", "success")
+      }, 1000)
+    }
   }
   
   function handleSignup(e) {
-    e.preventDefault();
-    const name = document.getElementById('signup-name').value;
-    const email = document.getElementById('signup-email').value;
-    const password = document.getElementById('signup-password').value;
-    
-    // Simulate signup (in a real app, this would be an API call)
-    setTimeout(() => {
-        isLoggedIn = true;
-        currentUser = { email, name };
-        saveUserToStorage();
-        updateAuthUI();
-        closeModal('signup');
-        showNotification('Account created successfully! Welcome to Near & Now.', 'success');
-    }, 1000);
-  }
+    e.preventDefault()
+    const name = document.getElementById("signup-name").value
+    const email = document.getElementById("signup-email").value
+    const phone = document.getElementById("signup-phone").value
+    const otpSection = document.getElementById("signup-otp-section")
+    const submitBtn = document.getElementById("signup-submit-btn")
   
-  function handleLogout() {
-    isLoggedIn = false;
-    currentUser = null;
-    localStorage.removeItem('nearAndNowUser');
-    updateAuthUI();
-    showNotification('You have been logged out.', 'info');
-  }
+    if (otpSection.style.display === "none") {
+      // First step: Send OTP
+      if (phone.length !== 10) {
+        showNotification("Please enter a valid 10-digit phone number", "error")
+        return
+      }
   
-  function checkLoginStatus() {
-    const savedUser = localStorage.getItem('nearAndNowUser');
-    if (savedUser) {
-        currentUser = JSON.parse(savedUser);
-        isLoggedIn = true;
-        updateAuthUI();
-    }
-  }
+      if (!name || !email) {
+        showNotification("Please fill in all required fields", "error")
+        return
+      }
   
-  function updateAuthUI() {
-    const authButtons = document.querySelector('.auth-buttons');
-    
-    if (isLoggedIn && currentUser) {
-        authButtons.innerHTML = `
-            <div class="user-welcome">
-                <span>Welcome, ${currentUser.name}</span>
-            </div>
-            <button class="auth-btn logout-btn" onclick="handleLogout()">
-                <i class="fas fa-sign-out-alt"></i>
-                <span>Logout</span>
-            </button>
-        `;
+      // Simulate sending OTP
+      showNotification("OTP sent to +91 " + phone, "success")
+      otpSection.style.display = "block"
+      submitBtn.textContent = "Verify & Create Account"
+      startOtpTimer("signup")
+  
+      // Focus first OTP input
+      document.querySelector("#signup-otp-section .otp-digit").focus()
     } else {
-        authButtons.innerHTML = `
-            <button class="auth-btn login-btn" id="login-btn">
-                <i class="fas fa-user"></i>
-                <span>Login</span>
-            </button>
-            <button class="auth-btn signup-btn" id="signup-btn">
-                <i class="fas fa-user-plus"></i>
-                <span>Sign Up</span>
-            </button>
-        `;
-        
-        // Re-attach event listeners
-        const newLoginBtn = document.getElementById('login-btn');
-        const newSignupBtn = document.getElementById('signup-btn');
-        if (newLoginBtn) newLoginBtn.addEventListener('click', () => openModal('login'));
-        if (newSignupBtn) newSignupBtn.addEventListener('click', () => openModal('signup'));
+      // Second step: Verify OTP and create account
+      const otpDigits = document.querySelectorAll("#signup-otp-section .otp-digit")
+      const otp = Array.from(otpDigits)
+        .map((input) => input.value)
+        .join("")
+  
+      if (otp.length !== 4) {
+        showNotification("Please enter the complete 4-digit OTP", "error")
+        return
+      }
+  
+      // Simulate OTP verification and account creation
+      setTimeout(() => {
+        isLoggedIn = true
+        currentUser = { phone: "+91" + phone, name, email }
+        saveUserToStorage()
+        updateAuthUI()
+        closeModal("signup")
+        resetSignupForm()
+        showNotification("Account created successfully! Welcome to Near & Now.", "success")
+      }, 1000)
     }
   }
+  
+  function startOtpTimer(type) {
+    const timerElement = document.getElementById(`${type}-timer-count`)
+    const resendBtn = document.getElementById(`${type}-resend-otp`)
+    const timerText = document.getElementById(`${type}-otp-timer`)
+  
+    let count = 30
+    timerElement.textContent = count
+  
+    const timer = setInterval(() => {
+      count--
+      timerElement.textContent = count
+  
+      if (count <= 0) {
+        clearInterval(timer)
+        timerText.style.display = "none"
+        resendBtn.style.display = "inline-block"
+      }
+    }, 1000)
+  
+    if (type === "login") {
+      loginOtpTimer = timer
+    } else {
+      signupOtpTimer = timer
+    }
+  
+    // Handle resend OTP
+    resendBtn.onclick = () => {
+      const phone = document.getElementById(`${type}-phone`).value
+      showNotification("OTP resent to +91 " + phone, "success")
+      timerText.style.display = "inline"
+      resendBtn.style.display = "none"
+      startOtpTimer(type)
+    }
+  }
+  
+  function resetLoginForm() {
+    document.getElementById("login-form").reset()
+    document.getElementById("login-otp-section").style.display = "none"
+    document.getElementById("login-submit-btn").textContent = "Send OTP"
+    if (loginOtpTimer) {
+      clearInterval(loginOtpTimer)
+      loginOtpTimer = null
+    }
+  }
+  
+  function resetSignupForm() {
+    document.getElementById("signup-form").reset()
+    document.getElementById("signup-otp-section").style.display = "none"
+    document.getElementById("signup-submit-btn").textContent = "Send OTP"
+    if (signupOtpTimer) {
+      clearInterval(signupOtpTimer)
+      signupOtpTimer = null
+    }
+  }
+  
+  // OTP input handling
+  document.addEventListener("DOMContentLoaded", () => {
+    // Handle OTP input auto-focus and validation
+    document.querySelectorAll(".otp-digit").forEach((input, index) => {
+      input.addEventListener("input", (e) => {
+        const value = e.target.value
+  
+        // Only allow numbers
+        if (!/^\d$/.test(value)) {
+          e.target.value = ""
+          return
+        }
+  
+        // Add filled class
+        e.target.classList.add("filled")
+  
+        // Move to next input
+        const nextInput = e.target.parentElement.children[index + 1]
+        if (nextInput && value) {
+          nextInput.focus()
+        }
+      })
+  
+      input.addEventListener("keydown", (e) => {
+        // Handle backspace
+        if (e.key === "Backspace" && !e.target.value) {
+          const prevInput = e.target.parentElement.children[index - 1]
+          if (prevInput) {
+            prevInput.focus()
+            prevInput.value = ""
+            prevInput.classList.remove("filled")
+          }
+        }
+      })
+  
+      input.addEventListener("paste", (e) => {
+        e.preventDefault()
+        const pastedData = e.clipboardData.getData("text")
+        const digits = pastedData.replace(/\D/g, "").slice(0, 4)
+  
+        const otpInputs = e.target.parentElement.children
+        for (let i = 0; i < digits.length && i < otpInputs.length; i++) {
+          otpInputs[i].value = digits[i]
+          otpInputs[i].classList.add("filled")
+        }
+  
+        if (digits.length > 0) {
+          const lastFilledIndex = Math.min(digits.length - 1, otpInputs.length - 1)
+          otpInputs[lastFilledIndex].focus()
+        }
+      })
+    })
+  
+    // Phone number validation
+    document.querySelectorAll('input[type="tel"]').forEach((input) => {
+      input.addEventListener("input", (e) => {
+        // Only allow numbers
+        e.target.value = e.target.value.replace(/\D/g, "")
+      })
+    })
+  })
   
   // Quick view function
   function quickView(itemName) {
-    const item = groceries.find(g => g.name === itemName);
-    showNotification(`Quick view for ${item.name} - Feature coming soon!`, 'info');
+    const item = groceries.find((g) => g.name === itemName)
+    showNotification(`Quick view for ${item.name} - Feature coming soon!`, "info")
   }
   
   // Buy now function
   function buyNow(itemName) {
-    addToCart(itemName);
-    toggleSidebar('cart');
+    addToCart(itemName)
+    toggleSidebar("cart")
   }
   
   // Notification system
-  function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
+  function showNotification(message, type = "info") {
+    const notification = document.createElement("div")
+    notification.className = `notification ${type}`
     notification.innerHTML = `
         <i class="fas fa-${getNotificationIcon(type)}"></i>
         <span>${message}</span>
-    `;
-    
-    document.body.appendChild(notification);
-    
+    `
+  
+    document.body.appendChild(notification)
+  
     setTimeout(() => {
-        notification.classList.add('show');
-    }, 100);
-    
+      notification.classList.add("show")
+    }, 100)
+  
     setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => {
-            if (document.body.contains(notification)) {
-                document.body.removeChild(notification);
-            }
-        }, 300);
-    }, 3000);
+      notification.classList.remove("show")
+      setTimeout(() => {
+        if (document.body.contains(notification)) {
+          document.body.removeChild(notification)
+        }
+      }, 300)
+    }, 3000)
   }
   
   function getNotificationIcon(type) {
     switch (type) {
-        case 'success': return 'check-circle';
-        case 'warning': return 'exclamation-triangle';
-        case 'error': return 'times-circle';
-        default: return 'info-circle';
+      case "success":
+        return "check-circle"
+      case "warning":
+        return "exclamation-triangle"
+      case "error":
+        return "times-circle"
+      default:
+        return "info-circle"
     }
   }
   
   // Animation functions
   function animateCartIcon() {
-    cartIcon.style.transform = 'scale(1.1)';
+    cartIcon.style.transform = "scale(1.1)"
     setTimeout(() => {
-        cartIcon.style.transform = 'scale(1)';
-    }, 200);
+      cartIcon.style.transform = "scale(1)"
+    }, 200)
   }
   
   // Storage functions
   function saveCartToStorage() {
-    localStorage.setItem('nearAndNowCart', JSON.stringify(cart));
+    localStorage.setItem("nearAndNowCart", JSON.stringify(cart))
   }
   
   function loadCartFromStorage() {
-    const savedCart = localStorage.getItem('nearAndNowCart');
+    const savedCart = localStorage.getItem("nearAndNowCart")
     if (savedCart) {
-        cart = JSON.parse(savedCart);
-        updateCart();
+      cart = JSON.parse(savedCart)
+      updateCart()
     }
   }
   
   function saveWishlistToStorage() {
-    localStorage.setItem('nearAndNowWishlist', JSON.stringify(wishlist));
+    localStorage.setItem("nearAndNowWishlist", JSON.stringify(wishlist))
   }
   
   function loadWishlistFromStorage() {
-    const savedWishlist = localStorage.getItem('nearAndNowWishlist');
+    const savedWishlist = localStorage.getItem("nearAndNowWishlist")
     if (savedWishlist) {
-        wishlist = JSON.parse(savedWishlist);
-        updateWishlist();
-        updateWishlistButtons();
+      wishlist = JSON.parse(savedWishlist)
+      updateWishlist()
+      updateWishlistButtons()
     }
   }
   
   function saveUserToStorage() {
-    localStorage.setItem('nearAndNowUser', JSON.stringify(currentUser));
+    localStorage.setItem("nearAndNowUser", JSON.stringify(currentUser))
   }
   
   // Utility functions
   function updateProductCount(count = groceries.length) {
-    productCount.textContent = `${count} product${count !== 1 ? 's' : ''}`;
+    productCount.textContent = `${count} product${count !== 1 ? "s" : ""}`
   }
   
   function handleScroll() {
     if (window.pageYOffset > 300) {
-        backToTop.classList.add('visible');
+      backToTop.classList.add("visible")
     } else {
-        backToTop.classList.remove('visible');
+      backToTop.classList.remove("visible")
     }
   }
   
   function scrollToTop() {
     window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+      top: 0,
+      behavior: "smooth",
+    })
   }
   
   function closePromoBanner() {
-    const promoBanner = document.getElementById('promo-banner');
-    promoBanner.style.display = 'none';
+    const promoBanner = document.getElementById("promo-banner")
+    promoBanner.style.display = "none"
   }
   
   // Keyboard shortcuts
   function handleKeyboardShortcuts(e) {
     if (e.ctrlKey || e.metaKey) {
-        switch (e.key) {
-            case 'k':
-                e.preventDefault();
-                searchInput.focus();
-                break;
-            case 'b':
-                e.preventDefault();
-                toggleSidebar('cart');
-                break;
-            case 'w':
-                e.preventDefault();
-                toggleSidebar('wishlist');
-                break;
-        }
+      switch (e.key) {
+        case "k":
+          e.preventDefault()
+          searchInput.focus()
+          break
+        case "b":
+          e.preventDefault()
+          toggleSidebar("cart")
+          break
+        case "w":
+          e.preventDefault()
+          toggleSidebar("wishlist")
+          break
+      }
     }
-    
-    if (e.key === 'Escape') {
-        closeAllSidebars();
+  
+    if (e.key === "Escape") {
+      closeAllSidebars()
     }
   }
   
@@ -1036,44 +1189,82 @@ const groceries = [
         background: #DC2626;
         transform: translateY(-1px);
     }
-  `;
+  `
   
   // Inject notification styles
-  const styleSheet = document.createElement('style');
-  styleSheet.textContent = notificationStyles;
-  document.head.appendChild(styleSheet);
+  const styleSheet = document.createElement("style")
+  styleSheet.textContent = notificationStyles
+  document.head.appendChild(styleSheet)
   
   // Initialize smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-  });
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault()
+      const target = document.querySelector(this.getAttribute("href"))
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })
+      }
+    })
+  })
   
   // Add intersection observer for animations
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+    rootMargin: "0px 0px -50px 0px",
+  }
   
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('slide-up');
-        }
-    });
-  }, observerOptions);
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("slide-up")
+      }
+    })
+  }, observerOptions)
   
   // Observe elements for animation
-  document.addEventListener('DOMContentLoaded', () => {
-    const elementsToAnimate = document.querySelectorAll('.feature-card, .contact-item, .about-content');
-    elementsToAnimate.forEach(el => observer.observe(el));
-  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const elementsToAnimate = document.querySelectorAll(".feature-card, .contact-item, .about-content")
+    elementsToAnimate.forEach((el) => observer.observe(el))
+  })
+  
+  function checkLoginStatus() {
+    const user = localStorage.getItem("nearAndNowUser")
+    if (user) {
+      currentUser = JSON.parse(user)
+      isLoggedIn = true
+      updateAuthUI()
+    } else {
+      isLoggedIn = false
+      updateAuthUI()
+    }
+  }
+  
+  function updateAuthUI() {
+    const authButtons = document.getElementById("auth-buttons")
+    const userSection = document.getElementById("user-section")
+  
+    if (isLoggedIn) {
+      authButtons.style.display = "none"
+      userSection.style.display = "flex"
+      document.getElementById("user-name").textContent = currentUser.name || "User"
+    } else {
+      authButtons.style.display = "flex"
+      userSection.style.display = "none"
+    }
+  }
+  
+  // Logout function
+  function logout() {
+    isLoggedIn = false
+    currentUser = null
+    localStorage.removeItem("nearAndNowUser")
+    updateAuthUI()
+    showNotification("Logged out successfully!", "success")
+  }
+  
+  // Add logout button event listener
+  document.getElementById("logout-btn").addEventListener("click", logout)
   
