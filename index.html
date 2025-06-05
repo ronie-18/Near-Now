@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
@@ -49,11 +53,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="header-center">
                     <div class="search-wrapper">
                         <div class="search-box">
-                            <input type="text" id="search-input" placeholder="Search for groceries, spices, dal, rice...">
+                            <input type="text" id="search-input"
+                                placeholder="Search for groceries, spices, dal, rice...">
                             <button id="search-btn">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -69,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="header-right">
                     <div class="auth-buttons">
                         <button class="btn btn-outline" id="login-btn">
@@ -81,7 +86,7 @@
                             Sign Up
                         </button>
                     </div>
-                    
+
                     <div class="header-actions">
                         <button class="action-btn" id="wishlist-icon">
                             <i class="fas fa-heart"></i>
@@ -96,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Navigation -->
             <nav class="navigation">
                 <div class="nav-left">
@@ -106,34 +111,34 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                 </div>
-                
+
                 <ul class="nav-menu">
                     <li><a href="#" class="nav-link active" data-category="all">
-                        <i class="fas fa-home"></i> Home
-                    </a></li>
+                            <i class="fas fa-home"></i> Home
+                        </a></li>
                     <li><a href="#" class="nav-link" data-category="staples">
-                        <i class="fas fa-seedling"></i> Staples
-                    </a></li>
+                            <i class="fas fa-seedling"></i> Staples
+                        </a></li>
                     <li><a href="#" class="nav-link" data-category="spices">
-                        <i class="fas fa-pepper-hot"></i> Spices
-                    </a></li>
+                            <i class="fas fa-pepper-hot"></i> Spices
+                        </a></li>
                     <li><a href="#" class="nav-link" data-category="vegetables">
-                        <i class="fas fa-carrot"></i> Vegetables
-                    </a></li>
+                            <i class="fas fa-carrot"></i> Vegetables
+                        </a></li>
                     <li><a href="#" class="nav-link" data-category="dairy">
-                        <i class="fas fa-cheese"></i> Dairy
-                    </a></li>
+                            <i class="fas fa-cheese"></i> Dairy
+                        </a></li>
                     <li><a href="#" class="nav-link" data-category="snacks">
-                        <i class="fas fa-cookie-bite"></i> Snacks
-                    </a></li>
+                            <i class="fas fa-cookie-bite"></i> Snacks
+                        </a></li>
                     <li><a href="#" class="nav-link" data-category="beverages">
-                        <i class="fas fa-coffee"></i> Beverages
-                    </a></li>
+                            <i class="fas fa-coffee"></i> Beverages
+                        </a></li>
                     <li><a href="#" class="nav-link hot-deals">
-                        <i class="fas fa-fire"></i> Hot Deals
-                    </a></li>
+                            <i class="fas fa-fire"></i> Hot Deals
+                        </a></li>
                 </ul>
-                
+
                 <div class="nav-right">
                     <div class="delivery-badge">
                         <i class="fas fa-truck"></i>
@@ -146,38 +151,112 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-circles">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h2>Fresh Indian Groceries</h2>
-                    <p>Delivered to Your Doorstep</p>
+                    <div class="hero-badge">
+                        <span>Premium Quality</span>
+                    </div>
+                    <h1 class="hero-title">Authentic Indian <span class="text-gradient">Groceries</span></h1>
+                    <p class="hero-subtitle">Bringing the flavors of India to your doorstep with our carefully selected
+                        range of premium products.</p>
+
                     <div class="hero-features">
                         <div class="feature-item">
-                            <i class="fas fa-truck"></i>
-                            <span>Free Delivery</span>
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-truck-fast"></i>
+                            </div>
+                            <span>Same Day Delivery</span>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-leaf"></i>
-                            <span>Fresh Quality</span>
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <span>100% Fresh Quality</span>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Same Day</span>
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-tag"></i>
+                            </div>
+                            <span>Best Price Guarantee</span>
                         </div>
                     </div>
-                    <button class="btn btn-hero" onclick="document.getElementById('products').scrollIntoView()">
-                        Shop Now <i class="fas fa-arrow-right"></i>
-                    </button>
+
+                    <div class="hero-actions">
+                        <button class="btn btn-hero" onclick="document.getElementById('products').scrollIntoView()">
+                            Shop Now <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <a href="#about" class="btn btn-outline-hero">
+                            Learn More <i class="fas fa-info-circle"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.8</span>
+                            <span class="stat-label">Customer Rating</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-image">
-                    <div class="floating-elements">
-                        <div class="floating-item">🌶️</div>
-                        <div class="floating-item">🌾</div>
-                        <div class="floating-item">🥛</div>
-                        <div class="floating-item">🧄</div>
+
+                <div class="hero-image-container">
+                    <div class="hero-image-wrapper">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3174/3174880.png" alt="Basmati Rice"
+                            class="floating-product product-1">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5769/5769174.png" alt="Turmeric"
+                            class="floating-product product-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3082/3082004.png" alt="Spices"
+                            class="floating-product product-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2548/2548555.png" alt="Lentils"
+                            class="floating-product product-4">
+                        <div class="hero-image-main">
+                            <div class="image-collage">
+                                <div class="collage-item collage-item-1">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2372/2372241.png"
+                                        alt="Indian Grocery">
+                                </div>
+                                <div class="collage-item collage-item-2">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1864/1864001.png" alt="Indian Tea">
+                                </div>
+                                <div class="collage-item collage-item-3">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909761.png"
+                                        alt="Fresh Vegetables">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discount-tag">
+                            <div class="discount-content">
+                                <span class="discount-value">20%</span>
+                                <span class="discount-label">OFF</span>
+                                <span class="discount-text">First Order</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#F8FAFC" fill-opacity="1"
+                    d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
         </div>
     </section>
 
@@ -200,31 +279,20 @@
                         <span>7 categories</span>
                     </div>
                 </div>
-                
+
                 <div class="products-controls">
-                    <div class="view-controls">
-                        <div class="view-toggle">
-                            <button class="view-btn active" data-view="grid">
-                                <i class="fas fa-th"></i>
-                            </button>
-                            <button class="view-btn" data-view="list">
-                                <i class="fas fa-list"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="sort-wrapper">
-                            <label>Sort by:</label>
-                            <select class="sort-select" id="sort-select">
-                                <option value="default">Featured</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="name">Name: A to Z</option>
-                                <option value="rating">Rating: High to Low</option>
-                                <option value="discount">Discount</option>
-                            </select>
-                        </div>
+                    <div class="sort-wrapper">
+                        <label>Sort by:</label>
+                        <select class="sort-select" id="sort-select">
+                            <option value="default">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                            <option value="rating">Rating: High to Low</option>
+                            <option value="discount">Discount</option>
+                        </select>
                     </div>
-                    
+
                     <div class="filter-controls">
                         <span class="filter-label">Quick Filters:</span>
                         <div class="filter-tags">
@@ -284,7 +352,8 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Near & Now</h2>
-                    <p>Your trusted source for authentic Indian groceries delivered right to your doorstep. We ensure the highest quality products at the best prices, bringing the taste of home to your kitchen.</p>
+                    <p>Your trusted source for authentic Indian groceries delivered right to your doorstep. We ensure
+                        the highest quality products at the best prices, bringing the taste of home to your kitchen.</p>
                     <div class="stats">
                         <div class="stat">
                             <span class="stat-number">1000+</span>
@@ -361,70 +430,34 @@
 
     <!-- Footer -->
     <footer class="footer">
-    <div class="container">
-        <div class="footer-top">
+        <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-store"></i>
-                        </div>
-                        <div class="logo-text">
-                            <h3>Near & Now</h3>
-                            <span>Indian Grocery Store</span>
-                        </div>
-                    </div>
-                    <p>Your trusted partner for authentic Indian groceries, delivered fresh to your doorstep with care and quality assurance.</p>
+                    <h3>Near & Now</h3>
+                    <p>Your trusted partner for authentic Indian groceries, delivered fresh to your doorstep.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <ul class="footer-links">
+                    <ul>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return Policy</a></li>
                         <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Categories</h4>
-                    <ul class="footer-links">
+                    <ul>
                         <li><a href="#" data-category="staples">Staples</a></li>
                         <li><a href="#" data-category="spices">Spices</a></li>
-                        <li><a href="#" data-category="vegetables">Vegetables</a></li>
                         <li><a href="#" data-category="dairy">Dairy</a></li>
                         <li><a href="#" data-category="snacks">Snacks</a></li>
-                        <li><a href="#" data-category="beverages">Beverages</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Us</h4>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Main Street, Mumbai, Maharashtra 400001, India</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <span>+91 98765 43210</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>support@nearandnow.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Sun: 8AM - 10PM</span>
-                        </li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -432,58 +465,21 @@
                     <p>Subscribe for exclusive offers and updates</p>
                     <div class="newsletter">
                         <input type="email" placeholder="Enter your email">
-                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
-                    </div>
-                    <div class="app-download">
-                        <p>Download Our App</p>
-                        <div class="app-buttons">
-                            <a href="#" class="app-btn">
-                                <i class="fab fa-google-play"></i>
-                                <span>Google Play</span>
-                            </a>
-                            <a href="#" class="app-btn">
-                                <i class="fab fa-apple"></i>
-                                <span>App Store</span>
-                            </a>
-                        </div>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-middle">
-            <div class="payment-delivery">
-                <div class="footer-section">
-                    <h4>We Accept</h4>
-                    <div class="payment-methods">
-                        <i class="fab fa-cc-visa" title="Visa"></i>
-                        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
-                        <i class="fab fa-cc-amex" title="American Express"></i>
-                        <i class="fab fa-cc-paypal" title="PayPal"></i>
-                        <i class="fas fa-wallet" title="Digital Wallets"></i>
-                        <i class="fas fa-money-bill-wave" title="Cash on Delivery"></i>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Delivery Partners</h4>
-                    <div class="delivery-partners">
-                        <span><i class="fas fa-truck"></i> Express Delivery</span>
-                        <span><i class="fas fa-shipping-fast"></i> Same Day</span>
-                        <span><i class="fas fa-box"></i> Standard</span>
-                    </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Near & Now Indian Grocery. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fas fa-mobile-alt"></i>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="current-year"></span> Near & Now Indian Grocery. All rights reserved.</p>
-            <div class="footer-bottom-links">
-                <a href="#">Sitemap</a>
-                <a href="#">Careers</a>
-                <a href="#">Blog</a>
-                <a href="#">FAQ</a>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Shopping Cart Sidebar -->
     <div class="sidebar cart-sidebar" id="cart-sidebar">
@@ -543,34 +539,25 @@
             <div class="modal-body">
                 <form id="login-form">
                     <div class="form-group">
-                        <label for="login-phone">Phone Number</label>
-                        <div class="phone-input">
-                            <span class="country-code">+91</span>
-                            <input type="tel" id="login-phone" placeholder="Enter your phone number" required maxlength="10" pattern="[0-9]{10}">
-                        </div>
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" placeholder="Enter your email" required>
                     </div>
-                    
-                    <div class="otp-section" id="login-otp-section" style="display: none;">
-                        <div class="form-group">
-                            <label for="login-otp">Enter OTP</label>
-                            <div class="otp-input">
-                                <input type="text" maxlength="1" class="otp-digit" data-index="0">
-                                <input type="text" maxlength="1" class="otp-digit" data-index="1">
-                                <input type="text" maxlength="1" class="otp-digit" data-index="2">
-                                <input type="text" maxlength="1" class="otp-digit" data-index="3">
-                            </div>
-                            <div class="otp-timer">
-                                <span id="login-otp-timer">Resend OTP in <span id="login-timer-count">30</span>s</span>
-                                <button type="button" id="login-resend-otp" style="display: none;">Resend OTP</button>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-full" id="login-submit-btn">
-                        Send OTP
-                    </button>
+                    <div class="form-row">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
                 </form>
-                
+                <div class="divider">
+                    <span>Or login with</span>
+                </div>
                 <div class="auth-switch">
                     <p>Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
                 </div>
@@ -598,38 +585,23 @@
                         <input type="email" id="signup-email" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group">
-                        <label for="signup-phone">Phone Number</label>
-                        <div class="phone-input">
-                            <span class="country-code">+91</span>
-                            <input type="tel" id="signup-phone" placeholder="Enter your phone number" required maxlength="10" pattern="[0-9]{10}">
-                        </div>
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" placeholder="Create a password" required>
                     </div>
-                    
-                    <div class="otp-section" id="signup-otp-section" style="display: none;">
-                        <div class="form-group">
-                            <label for="signup-otp">Enter OTP</label>
-                            <div class="otp-input">
-                                <input type="text" maxlength="1" class="otp-digit" data-index="0">
-                                <input type="text" maxlength="1" class="otp-digit" data-index="1">
-                                <input type="text" maxlength="1" class="otp-digit" data-index="2">
-                                <input type="text" maxlength="1" class="otp-digit" data-index="3">
-                            </div>
-                            <div class="otp-timer">
-                                <span id="signup-otp-timer">Resend OTP in <span id="signup-timer-count">30</span>s</span>
-                                <button type="button" id="signup-resend-otp" style="display: none;">Resend OTP</button>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" placeholder="Confirm your password"
+                            required>
                     </div>
-                    
                     <div class="form-group checkbox-group">
                         <input type="checkbox" id="terms" required>
                         <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full" id="signup-submit-btn">
-                        Send OTP
-                    </button>
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
                 </form>
-                
+                <div class="divider">
+                    <span>Or sign up with</span>
+                </div>
                 <div class="auth-switch">
                     <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
                 </div>
@@ -647,4 +619,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
