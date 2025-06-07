@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Near and Now - Premium Grocery Delivery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .bounce-in {
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .slide-in {
+            animation: slideInRight 0.4s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .category-gradient-1 {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        }
+
+        .category-gradient-2 {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .category-gradient-3 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .category-gradient-4 {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+        }
+
+        .category-gradient-5 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .category-gradient-6 {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 to-blue-50">
+    <!-- Navigation -->
+    <nav class="nav-blur shadow-xl fixed w-full top-0 z-50 border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="bg-gradient-to-r from-purple-600 to-blue-600 p-3 rounded-xl mr-3 floating">
+                            <i class="fas fa-shopping-basket text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-display font-bold gradient-text">Near & Now</span>
+                            <p class="text-xs text-gray-500 -mt-1">Premium Delivery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="nav-link text-gray-900 hover:text-purple-600 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-purple-50">Home</a>
+                        <a href="#categories"
+                            class="nav-link text-gray-600 hover:text-purple-600 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-purple-50">Categories</a>
+                        <a href="#products"
+                            class="nav-link text-gray-600 hover:text-purple-600 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-purple-50">Products</a>
+                        <a href="#about"
+                            class="nav-link text-gray-600 hover:text-purple-600 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-purple-50">About</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button id="searchBtn"
+                        class="text-gray-600 hover:text-purple-600 transition-all duration-300 p-3 rounded-full hover:bg-purple-50">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <button id="cartBtn"
+                        class="relative text-gray-600 hover:text-purple-600 transition-all duration-300 p-3 rounded-full hover:bg-purple-50">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                        <span id="cartCount"
+                            class="absolute -top-1 -right-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center hidden pulse-glow font-bold">0</span>
+                    </button>
+                    <button id="loginBtn"
+                        class="btn-primary text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+                        <i class="fas fa-user mr-2"></i>Login
+                    </button>
+                    <button id="mobileMenuBtn"
+                        class="md:hidden text-gray-600 hover:text-purple-600 p-3 rounded-full hover:bg-purple-50">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white/95 backdrop-blur-lg border-t border-white/20">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="#home"
+                    class="nav-link block text-gray-900 hover:text-purple-600 px-4 py-3 rounded-xl text-base font-semibold hover:bg-purple-50 transition-all">Home</a>
+                <a href="#categories"
+                    class="nav-link block text-gray-600 hover:text-purple-600 px-4 py-3 rounded-xl text-base font-semibold hover:bg-purple-50 transition-all">Categories</a>
+                <a href="#products"
+                    class="nav-link block text-gray-600 hover:text-purple-600 px-4 py-3 rounded-xl text-base font-semibold hover:bg-purple-50 transition-all">Products</a>
+                <a href="#about"
+                    class="nav-link block text-gray-600 hover:text-purple-600 px-4 py-3 rounded-xl text-base font-semibold hover:bg-purple-50 transition-all">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-20 pb-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl floating"></div>
+        <div class="absolute top-40 right-20 w-32 h-32 bg-white/10 rounded-full blur-xl floating"
+            style="animation-delay: -1s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-white/10 rounded-full blur-xl floating"
+            style="animation-delay: -2s;"></div>
+
+        <div class="max-w-7xl mx-auto relative">
+            <div class="text-center">
+                <div class="mb-8 bounce-in">
+                    <span
+                        class="inline-block bg-white/20 text-white px-6 py-2 rounded-full text-sm font-semibold backdrop-blur-sm border border-white/30">
+                        <i class="fas fa-bolt mr-2"></i>Now delivering in 15 minutes!
+                    </span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-8 fade-in leading-tight">
+                    Premium Groceries<br>
+                    <span class="text-yellow-300 relative">
+                        Delivered Fresh
+                        <div class="absolute -bottom-2 left-0 right-0 h-1 bg-yellow-300/50 rounded-full"></div>
+                    </span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto fade-in leading-relaxed">
+                    Experience the finest selection of fresh groceries delivered to your doorstep with unmatched speed
+                    and quality. Your premium lifestyle deserves premium service.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 slide-up">
+                    <div class="relative w-full sm:w-96 lg:w-[500px]">
+                        <input type="text" id="heroSearch" placeholder="Search premium groceries..."
+                            class="w-full px-6 py-4 pl-14 rounded-2xl border-0 focus:ring-4 focus:ring-yellow-300/50 focus:outline-none text-lg shadow-2xl backdrop-blur-sm bg-white/95">
+                        <i class="fas fa-search absolute left-5 top-5 text-gray-400 text-lg"></i>
+                    </div>
+                    <button id="heroSearchBtn"
+                        class="bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-10 py-4 rounded-2xl font-bold text-lg hover:from-yellow-300 hover:to-orange-300 transition-all duration-300 shadow-2xl hover:shadow-yellow-400/25 hover:scale-105 whitespace-nowrap">
+                        <i class="fas fa-rocket mr-2"></i>Shop Now
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+                    <div class="text-center fade-in glass-effect p-8 rounded-2xl">
+                        <div
+                            class="bg-yellow-400 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 floating">
+                            <i class="fas fa-shipping-fast text-gray-900 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">15-Min Express</h3>
+                        <p class="text-white/80 leading-relaxed">Lightning-fast delivery that brings premium groceries
+                            to your door in record time</p>
+                    </div>
+                    <div class="text-center fade-in glass-effect p-8 rounded-2xl" style="animation-delay: 0.2s;">
+                        <div class="bg-green-400 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 floating"
+                            style="animation-delay: -1s;">
+                            <i class="fas fa-shield-alt text-gray-900 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Premium Quality</h3>
+                        <p class="text-white/80 leading-relaxed">Hand-selected fresh products with 100% satisfaction
+                            guarantee or full refund</p>
+                    </div>
+                    <div class="text-center fade-in glass-effect p-8 rounded-2xl" style="animation-delay: 0.4s;">
+                        <div class="bg-blue-400 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 floating"
+                            style="animation-delay: -2s;">
+                            <i class="fas fa-tags text-gray-900 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Best Value</h3>
+                        <p class="text-white/80 leading-relaxed">Competitive pricing with exclusive member discounts and
+                            seasonal offers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-24 px-4 sm:px-6 lg:px-8 bg-white relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <div class="inline-block bg-gradient-to-r from-purple-100 to-blue-100 px-6 py-2 rounded-full mb-6">
+                    <span class="text-purple-600 font-semibold text-sm">
+                        <i class="fas fa-star mr-2"></i>PREMIUM SELECTION
+                    </span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6 gradient-text">Curated
+                    Categories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Discover our carefully curated
+                    selection of premium groceries, sourced from the finest suppliers worldwide</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="category-card category-gradient-1 p-8 rounded-3xl text-center card-hover cursor-pointer relative overflow-hidden"
+                    data-category="fruits">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <div class="relative z-10">
+                        <div
+                            class="bg-white/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                            <i class="fas fa-apple-alt text-green-700 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Fresh Fruits</h3>
+                        <p class="text-sm text-gray-700 opacity-90">Organic & Sweet</p>
+                    </div>
+                </div>
+
+                <div class="category-card category-gradient-2 p-8 rounded-3xl text-center card-hover cursor-pointer relative overflow-hidden"
+                    data-category="vegetables">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <div class="relative z-10">
+                        <div
+                            class="bg-white/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                            <i class="fas fa-carrot text-orange-700 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Vegetables</h3>
+                        <p class="text-sm text-gray-700 opacity-90">Farm to Table</p>
+                    </div>
+                </div>
+
+                <div class="category-card category-gradient-3 p-8 rounded-3xl text-center card-hover cursor-pointer relative overflow-hidden"
+                    data-category="dairy">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <div class="relative z-10">
+                        <div
+                            class="bg-white/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                            <i class="fas fa-glass-whiskey text-blue-700 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Dairy Fresh</h3>
+                        <p class="text-sm text-gray-700 opacity-90">Pure & Creamy</p>
+                    </div>
+                </div>
+
+                <div class="category-card category-gradient-4 p-8 rounded-3xl text-center card-hover cursor-pointer relative overflow-hidden"
+                    data-category="bakery">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <div class="relative z-10">
+                        <div
+                            class="bg-white/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                            <i class="fas fa-bread-slice text-yellow-800 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-lg mb-2">Artisan Bakery</h3>
+                        <p class="text-sm text-white opacity-90">Fresh Baked Daily</p>
+                    </div>
+                </div>
+
+                <div class="category-card category-gradient-5 p-8 rounded-3xl text-center card-hover cursor-pointer relative overflow-hidden"
+                    data-category="meat">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <div class="relative z-10">
+                        <div
+                            class="bg-white/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                            <i class="fas fa-drumstick-bite text-red-700 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Premium Meat</h3>
+                        <p class="text-sm text-gray-700 opacity-90">Grade A Quality</p>
+                    </div>
+                </div>
+
+                <div class="category-card category-gradient-6 p-8 rounded-3xl text-center card-hover cursor-pointer relative overflow-hidden"
+                    data-category="snacks">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <div class="relative z-10">
+                        <div
+                            class="bg-white/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                            <i class="fas fa-cookie-bite text-purple-700 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 text-lg mb-2">Gourmet Snacks</h3>
+                        <p class="text-sm text-gray-700 opacity-90">Artisan Treats</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-center mb-16">
+                <div class="text-center lg:text-left mb-8 lg:mb-0">
+                    <div class="inline-block bg-gradient-to-r from-purple-100 to-blue-100 px-6 py-2 rounded-full mb-6">
+                        <span class="text-purple-600 font-semibold text-sm">
+                            <i class="fas fa-crown mr-2"></i>FEATURED COLLECTION
+                        </span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4 gradient-text">Premium
+                        Products</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed">Handpicked premium items curated just for you</p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <select id="sortSelect"
+                        class="px-6 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 focus:outline-none bg-white shadow-lg font-semibold">
+                        <option value="featured">✨ Featured</option>
+                        <option value="price-low">💰 Price: Low to High</option>
+                        <option value="price-high">💎 Price: High to Low</option>
+                        <option value="name">🔤 Name A-Z</option>
+                    </select>
+                    <div class="flex border-2 border-gray-200 rounded-xl overflow-hidden shadow-lg">
+                        <button id="gridView" class="p-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+                            <i class="fas fa-th text-lg"></i>
+                        </button>
+                        <button id="listView" class="p-3 bg-white text-gray-600 hover:bg-gray-50">
+                            <i class="fas fa-list text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+                    <button
+                        class="filter-btn bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg"
+                        data-filter="all">
+                        <i class="fas fa-star mr-2"></i>All Products
+                    </button>
+                    <button
+                        class="filter-btn bg-white text-gray-700 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-50 shadow-lg border-2 border-gray-200 transition-all"
+                        data-filter="fruits">
+                        <i class="fas fa-apple-alt mr-2"></i>Fruits
+                    </button>
+                    <button
+                        class="filter-btn bg-white text-gray-700 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-50 shadow-lg border-2 border-gray-200 transition-all"
+                        data-filter="vegetables">
+                        <i class="fas fa-carrot mr-2"></i>Vegetables
+                    </button>
+                    <button
+                        class="filter-btn bg-white text-gray-700 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-50 shadow-lg border-2 border-gray-200 transition-all"
+                        data-filter="dairy">
+                        <i class="fas fa-glass-whiskey mr-2"></i>Dairy
+                    </button>
+                    <button
+                        class="filter-btn bg-white text-gray-700 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-50 shadow-lg border-2 border-gray-200 transition-all"
+                        data-filter="bakery">
+                        <i class="fas fa-bread-slice mr-2"></i>Bakery
+                    </button>
+                </div>
+            </div>
+
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+
+            <div class="text-center mt-16">
+                <button id="loadMoreBtn"
+                    class="btn-primary text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-xl">
+                    <i class="fas fa-plus mr-2"></i>Load More Premium Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-5">
+            <div class="absolute top-20 left-20 w-40 h-40 bg-purple-300 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-60 h-60 bg-blue-300 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-block bg-gradient-to-r from-purple-100 to-blue-100 px-6 py-2 rounded-full mb-8">
+                        <span class="text-purple-600 font-semibold text-sm">
+                            <i class="fas fa-heart mr-2"></i>WHY CHOOSE US
+                        </span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-8 gradient-text">The Near &
+                        Now Difference</h2>
+                    <p class="text-xl text-gray-600 mb-12 leading-relaxed">We're revolutionizing grocery delivery with
+                        premium quality, lightning-fast service, and an unmatched commitment to excellence.</p>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start group">
+                            <div class="flex-shrink-0 mr-6">
+                                <div
+                                    class="bg-gradient-to-r from-blue-500 to-purple-600 w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-bolt text-white text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Lightning Fast Delivery</h3>
+                                <p class="text-gray-600 leading-relaxed">Revolutionary 15-minute delivery system powered
+                                    by AI-optimized logistics and strategically located micro-fulfillment centers.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start group">
+                            <div class="flex-shrink-0 mr-6">
+                                <div
+                                    class="bg-gradient-to-r from-green-500 to-teal-600 w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-leaf text-white text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Premium Quality Assurance</h3>
+                                <p class="text-gray-600 leading-relaxed">Every product is hand-selected by our quality
+                                    experts and sourced directly from premium suppliers and local organic farms.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start group">
+                            <div class="flex-shrink-0 mr-6">
+                                <div
+                                    class="bg-gradient-to-r from-yellow-500 to-orange-600 w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-crown text-white text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Exclusive Member Benefits</h3>
+                                <p class="text-gray-600 leading-relaxed">Enjoy exclusive discounts, early access to
+                                    premium products, and personalized recommendations tailored to your preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative z-10">
+                        <img src="/placeholder.svg?height=500&width=600" alt="Premium groceries"
+                            class="rounded-3xl shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-3xl">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -top-6 -left-6 w-full h-full bg-gradient-to-r from-purple-200 to-blue-200 rounded-3xl -z-10">
+                    </div>
+                    <div
+                        class="absolute -bottom-6 -right-6 w-full h-full bg-gradient-to-r from-pink-200 to-purple-200 rounded-3xl -z-20">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="max-w-7xl mx-auto relative">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-r from-purple-500 to-blue-500 p-3 rounded-xl mr-4">
+                            <i class="fas fa-shopping-basket text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-display font-bold">Near & Now</span>
+                            <p class="text-sm text-gray-300">Premium Delivery</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-8 text-lg leading-relaxed max-w-md">Your trusted partner for premium
+                        grocery delivery. Experience the perfect blend of quality, speed, and convenience in every
+                        order.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-home mr-3 w-4"></i>Home</a></li>
+                        <li><a href="#categories"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-th-large mr-3 w-4"></i>Categories</a></li>
+                        <li><a href="#products"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-shopping-bag mr-3 w-4"></i>Products</a></li>
+                        <li><a href="#about"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-info-circle mr-3 w-4"></i>About</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white">Customer Care</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-headset mr-3 w-4"></i>Help Center</a></li>
+                        <li><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-truck mr-3 w-4"></i>Track Order</a></li>
+                        <li><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-undo mr-3 w-4"></i>Returns</a></li>
+                        <li><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-phone mr-3 w-4"></i>Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-300 mb-4 md:mb-0">
+                        <p>&copy; 2024 Near & Now. All rights reserved. | Premium Grocery Delivery Service</p>
+                    </div>
+                    <div class="flex items-center space-x-6 text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-green-400"></i>
+                            <span class="font-semibold">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                            <span class="font-semibold">hello@nearandnow.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cartSidebar"
+        class="fixed inset-y-0 right-0 w-96 bg-white shadow-2xl transform translate-x-full transition-all duration-500 ease-out z-50 border-l border-gray-200">
+        <div class="flex flex-col h-full">
+            <div
+                class="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-purple-50 to-blue-50">
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900">Shopping Cart</h2>
+                    <p class="text-sm text-gray-600">Premium items selected</p>
+                </div>
+                <button id="closeCart"
+                    class="text-gray-500 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100 transition-all">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="cartItems" class="flex-1 overflow-y-auto p-6">
+                <div class="text-center text-gray-500 mt-16">
+                    <div class="bg-gray-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shopping-cart text-3xl opacity-50"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Your cart is empty</h3>
+                    <p class="text-sm">Add some premium products to get started</p>
+                </div>
+            </div>
+            <div id="cartFooter" class="border-t border-gray-200 p-6 hidden bg-gradient-to-r from-purple-50 to-blue-50">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-lg font-semibold text-gray-900">Total Amount:</span>
+                    <span id="cartTotal"
+                        class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">$0.00</span>
+                </div>
+                <button id="checkoutBtn"
+                    class="w-full btn-primary text-white py-4 rounded-2xl font-bold text-lg shadow-xl">
+                    <i class="fas fa-credit-card mr-2"></i>Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-3xl p-10 max-w-md w-full mx-4 shadow-2xl">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-3xl font-display font-bold gradient-text">Welcome Back</h2>
+                    <p class="text-gray-600 mt-1">Sign in to your premium account</p>
+                </div>
+                <button id="closeLogin" class="text-gray-500 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-3">Email Address</label>
+                    <div class="relative">
+                        <input type="email"
+                            class="w-full px-4 py-4 pl-12 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 focus:outline-none transition-all"
+                            placeholder="Enter your email" required>
+                        <i class="fas fa-envelope absolute left-4 top-5 text-gray-400"></i>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-3">Password</label>
+                    <div class="relative">
+                        <input type="password"
+                            class="w-full px-4 py-4 pl-12 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 focus:outline-none transition-all"
+                            placeholder="Enter your password" required>
+                        <i class="fas fa-lock absolute left-4 top-5 text-gray-400"></i>
+                    </div>
+                </div>
+                <button type="submit" class="w-full btn-primary text-white py-4 rounded-xl font-bold text-lg shadow-xl">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Sign In to Premium
+                </button>
+            </form>
+            <p class="text-center text-gray-600 mt-6">
+                Don't have an account? <a href="#" id="showSignup"
+                    class="text-purple-600 hover:underline font-semibold">Create Premium Account</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="searchModal"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-start justify-center pt-20 z-50 hidden">
+        <div class="bg-white rounded-3xl p-8 max-w-2xl w-full mx-4 shadow-2xl">
+            <div class="relative mb-6">
+                <input type="text" id="searchInput" placeholder="Search for premium products..."
+                    class="w-full px-6 py-4 pl-14 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 focus:outline-none text-lg">
+                <i class="fas fa-search absolute left-5 top-5 text-gray-400 text-lg"></i>
+                <button id="closeSearch" class="absolute right-5 top-5 text-gray-400 hover:text-gray-600 p-1">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            <div id="searchResults" class="max-h-96 overflow-y-auto">
+                <div class="text-center text-gray-500 py-12">
+                    <i class="fas fa-search text-4xl mb-4 opacity-50"></i>
+                    <p class="text-lg">Start typing to discover premium products...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample product data with enhanced details
+        const products = [
+            { id: 1, name: "Organic Bananas", category: "fruits", price: 4.99, image: "/placeholder.svg?height=250&width=250", rating: 4.8, inStock: true, description: "Premium organic bananas" },
+            { id: 2, name: "Honeycrisp Apples", category: "fruits", price: 6.99, image: "/placeholder.svg?height=250&width=250", rating: 4.9, inStock: true, description: "Sweet and crispy apples" },
+            { id: 3, name: "Baby Spinach", category: "vegetables", price: 5.49, image: "/placeholder.svg?height=250&width=250", rating: 4.7, inStock: true, description: "Fresh organic baby spinach" },
+            { id: 4, name: "Grass-Fed Milk", category: "dairy", price: 7.99, image: "/placeholder.svg?height=250&width=250", rating: 4.8, inStock: true, description: "Premium grass-fed whole milk" },
+            { id: 5, name: "Artisan Sourdough", category: "bakery", price: 8.49, image: "/placeholder.svg?height=250&width=250", rating: 4.9, inStock: true, description: "Handcrafted sourdough bread" },
+            { id: 6, name: "Rainbow Carrots", category: "vegetables", price: 4.79, image: "/placeholder.svg?height=250&width=250", rating: 4.6, inStock: true, description: "Colorful heirloom carrots" },
+            { id: 7, name: "Greek Yogurt", category: "dairy", price: 9.99, image: "/placeholder.svg?height=250&width=250", rating: 4.9, inStock: true, description: "Thick and creamy Greek yogurt" },
+            { id: 8, name: "Strawberries", category: "fruits", price: 8.99, image: "/placeholder.svg?height=250&width=250", rating: 4.7, inStock: true, description: "Sweet organic strawberries" },
+            { id: 9, name: "French Croissants", category: "bakery", price: 12.99, image: "/placeholder.svg?height=250&width=250", rating: 4.8, inStock: true, description: "Buttery French croissants" },
+            { id: 10, name: "Bell Peppers", category: "vegetables", price: 5.99, image: "/placeholder.svg?height=250&width=250", rating: 4.5, inStock: true, description: "Colorful bell peppers" },
+            { id: 11, name: "Aged Cheddar", category: "dairy", price: 15.99, image: "/placeholder.svg?height=250&width=250", rating: 4.9, inStock: true, description: "Premium aged cheddar cheese" },
+            { id: 12, name: "Naval Oranges", category: "fruits", price: 6.49, image: "/placeholder.svg?height=250&width=250", rating: 4.6, inStock: true, description: "Juicy naval oranges" }
+        ];
+
+        let cart = [];
+        let currentFilter = 'all';
+        let currentSort = 'featured';
+        let displayedProducts = 8;
+
+        // DOM elements
+        const cartBtn = document.getElementById('cartBtn');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCart = document.getElementById('closeCart');
+        const cartCount = document.getElementById('cartCount');
+        const cartItems = document.getElementById('cartItems');
+        const cartFooter = document.getElementById('cartFooter');
+        const cartTotal = document.getElementById('cartTotal');
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeLogin = document.getElementById('closeLogin');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchModal = document.getElementById('searchModal');
+        const closeSearch = document.getElementById('closeSearch');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const productsGrid = document.getElementById('productsGrid');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+        // Event listeners
+        cartBtn.addEventListener('click', () => {
+            cartSidebar.classList.remove('translate-x-full');
+        });
+
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.add('translate-x-full');
+        });
+
+        loginBtn.addEventListener('click', () => {
+            loginModal.classList.remove('hidden');
+        });
+
+        closeLogin.addEventListener('click', () => {
+            loginModal.classList.add('hidden');
+        });
+
+        searchBtn.addEventListener('click', () => {
+            searchModal.classList.remove('hidden');
+            document.getElementById('searchInput').focus();
+        });
+
+        closeSearch.addEventListener('click', () => {
+            searchModal.classList.add('hidden');
+        });
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-gradient-to-r', 'from-purple-600', 'to-blue-600', 'text-white');
+                    b.classList.add('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+                });
+                btn.classList.remove('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+                btn.classList.add('bg-gradient-to-r', 'from-purple-600', 'to-blue-600', 'text-white');
+
+                currentFilter = btn.dataset.filter;
+                displayedProducts = 8;
+                renderProducts();
+            });
+        });
+
+        // Category cards
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.dataset.category;
+                currentFilter = category;
+                displayedProducts = 8;
+
+                // Update filter buttons
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-gradient-to-r', 'from-purple-600', 'to-blue-600', 'text-white');
+                    b.classList.add('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+                });
+                const targetBtn = document.querySelector(`[data-filter="${category}"]`);
+                if (targetBtn) {
+                    targetBtn.classList.remove('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+                    targetBtn.classList.add('bg-gradient-to-r', 'from-purple-600', 'to-blue-600', 'text-white');
+                }
+
+                // Scroll to products section
+                document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+                renderProducts();
+            });
+        });
+
+        // Sort functionality
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            renderProducts();
+        });
+
+        // Load more products
+        loadMoreBtn.addEventListener('click', () => {
+            displayedProducts += 8;
+            renderProducts();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // Close mobile menu
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const results = products.filter(product =>
+                product.name.toLowerCase().includes(query) ||
+                product.description.toLowerCase().includes(query)
+            );
+
+            const searchResults = document.getElementById('searchResults');
+            if (query.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="text-center text-gray-500 py-12">
+                        <i class="fas fa-search text-4xl mb-4 opacity-50"></i>
+                        <p class="text-lg">Start typing to discover premium products...</p>
+                    </div>
+                `;
+                return;
+            }
+
+            if (results.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="text-center text-gray-500 py-12">
+                        <i class="fas fa-search text-4xl mb-4 opacity-50"></i>
+                        <p class="text-lg">No premium products found</p>
+                        <p class="text-sm mt-2">Try searching with different keywords</p>
+                    </div>
+                `;
+                return;
+            }
+
+            searchResults.innerHTML = results.map(product => `
+                <div class="flex items-center p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 rounded-xl transition-all" onclick="addToCart(${product.id})">
+                    <img src="${product.image}" alt="${product.name}" class="w-16 h-16 rounded-xl mr-4 object-cover">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-gray-900">${product.name}</h3>
+                        <p class="text-sm text-gray-600">${product.description}</p>
+                        <div class="flex items-center mt-1">
+                            <div class="flex text-yellow-400 text-sm mr-2">
+                                ${'★'.repeat(Math.floor(product.rating))}
+                            </div>
+                            <span class="text-lg font-bold text-purple-600">$${product.price}</span>
+                        </div>
+                    </div>
+                    <button class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:scale-105 transition-transform">
+                        <i class="fas fa-plus mr-1"></i>Add
+                    </button>
+                </div>
+            `).join('');
+        });
+
+        // Hero search
+        document.getElementById('heroSearchBtn').addEventListener('click', () => {
+            const query = document.getElementById('heroSearch').value;
+            if (query) {
+                searchModal.classList.remove('hidden');
+                document.getElementById('searchInput').value = query;
+                document.getElementById('searchInput').dispatchEvent(new Event('input'));
+            }
+        });
+
+        // Product rendering
+        function renderProducts() {
+            let filteredProducts = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter);
+
+            // Sort products
+            switch (currentSort) {
+                case 'price-low':
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name':
+                    filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+            }
+
+            const productsToShow = filteredProducts.slice(0, displayedProducts);
+
+            productsGrid.innerHTML = productsToShow.map(product => `
+                <div class="product-card rounded-3xl shadow-lg overflow-hidden card-hover fade-in border-2 border-gray-100">
+                    <div class="relative">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-56 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <button class="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all hover:scale-110">
+                                <i class="fas fa-heart text-gray-600 hover:text-red-500 transition-colors"></i>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-gradient-to-r from-green-500 to-teal-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                                <i class="fas fa-leaf mr-1"></i>Premium
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-gray-900 mb-2 text-lg">${product.name}</h3>
+                        <p class="text-gray-600 text-sm mb-3">${product.description}</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400 mr-2">
+                                ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}
+                            </div>
+                            <span class="text-sm text-gray-600">(${product.rating})</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">$${product.price}</span>
+                            <button onclick="addToCart(${product.id})" class="btn-primary text-white px-6 py-3 rounded-xl font-semibold shadow-lg">
+                                <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Show/hide load more button
+            loadMoreBtn.style.display = displayedProducts >= filteredProducts.length ? 'none' : 'block';
+        }
+
+        // Cart functionality
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            showNotification('Premium product added to cart!', 'success');
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+            showNotification('Product removed from cart', 'info');
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        function updateCartUI() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            // Update cart count
+            if (totalItems > 0) {
+                cartCount.textContent = totalItems;
+                cartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+            }
+
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="text-center text-gray-500 mt-16">
+                        <div class="bg-gray-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-shopping-cart text-3xl opacity-50"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Your cart is empty</h3>
+                        <p class="text-sm">Add some premium products to get started</p>
+                    </div>
+                `;
+                cartFooter.classList.add('hidden');
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="flex items-center py-4 border-b border-gray-100">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-xl mr-4 object-cover">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-900">${item.name}</h3>
+                            <p class="text-sm text-gray-600">$${item.price}</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="updateQuantity(${item.id}, -1)" class="bg-gray-200 text-gray-700 w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors">
+                                <i class="fas fa-minus text-xs"></i>
+                            </button>
+                            <span class="w-8 text-center font-semibold">${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" class="bg-gray-200 text-gray-700 w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors">
+                                <i class="fas fa-plus text-xs"></i>
+                            </button>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" class="ml-4 text-red-500 hover:text-red-700 p-2 rounded-full hover:bg-red-50 transition-all">
+                            <i class="fas fa-trash text-sm"></i>
+                        </button>
+                    </div>
+                `).join('');
+
+                cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
+                cartFooter.classList.remove('hidden');
+            }
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500';
+            const icon = type === 'success' ? 'fas fa-check-circle' : type === 'error' ? 'fas fa-exclamation-circle' : 'fas fa-info-circle';
+
+            notification.className = `fixed top-24 right-4 ${bgColor} text-white px-6 py-4 rounded-2xl shadow-2xl z-50 slide-in flex items-center space-x-3`;
+            notification.innerHTML = `
+                <i class="${icon}"></i>
+                <span class="font-semibold">${message}</span>
+            `;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Initialize the page
+        renderProducts();
+
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.classList.add('hidden');
+            }
+            if (e.target === searchModal) {
+                searchModal.classList.add('hidden');
+            }
+        });
+
+        // Close cart when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!cartSidebar.contains(e.target) && !cartBtn.contains(e.target) && !cartSidebar.classList.contains('translate-x-full')) {
+                cartSidebar.classList.add('translate-x-full');
+            }
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-2xl');
+            } else {
+                nav.classList.remove('shadow-2xl');
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.card-hover, .category-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
