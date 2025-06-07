@@ -271,7 +271,7 @@ const backToTop = document.getElementById("back-to-top")
 const loadingScreen = document.getElementById("loading-screen")
 const currentYear = document.getElementById("current-year")
 const loginBtn = document.getElementById("login-btn")
-const signupBtn = document.getElementById("signup-btn")
+// const signupBtn = document.getElementById("signup-btn")
 const loginModal = document.getElementById("login-modal")
 const signupModal = document.getElementById("signup-modal")
 const closeLoginModal = document.getElementById("close-login-modal")
@@ -817,15 +817,15 @@ function updateAuthUI() {
               <i class="fas fa-user"></i>
               <span>Login</span>
           </button>
-          <button class="auth-btn signup-btn" id="signup-btn">
-              <i class="fas fa-user-plus"></i>
-              <span>Sign Up</span>
-          </button>
+          // <button class="auth-btn signup-btn" id="signup-btn">
+          //     <i class="fas fa-user-plus"></i>
+          //     <span>Sign Up</span>
+          // </button>
       `
 
     // Re-attach event listeners
     const newLoginBtn = document.getElementById("login-btn")
-    const newSignupBtn = document.getElementById("signup-btn")
+    // const newSignupBtn = document.getElementById("signup-btn")
     if (newLoginBtn) newLoginBtn.addEventListener("click", () => openModal("login"))
     if (newSignupBtn) newSignupBtn.addEventListener("click", () => openModal("signup"))
   }
