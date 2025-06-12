@@ -1,5 +1,3 @@
-import storeManager from './store.js';
-
 const groceries = [
   {
     name: "Basmati Rice",
