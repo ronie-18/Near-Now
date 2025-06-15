@@ -271,6 +271,39 @@ h6 {
   background: var(--primary-dark);
 }
 
+/* Category Dropdown */
+.category-dropdown {
+  position: relative;
+  border-right: 2px solid var(--border-color);
+}
+
+.category-select {
+  padding: 0.875rem 1rem;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  outline: none;
+  color: var(--text-color);
+  cursor: pointer;
+  min-width: 140px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.category-select:focus {
+  color: var(--primary-color);
+}
+
+.category-select option {
+  padding: 0.5rem;
+  background: white;
+  color: var(--text-color);
+}
+
 .trending-searches {
   display: flex;
   align-items: center;
@@ -2287,6 +2320,20 @@ h6 {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .category-dropdown {
+    border-right: none;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .category-select {
+    min-width: 100%;
+    text-align: center;
   }
 
   .navigation {

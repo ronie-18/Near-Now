@@ -37,7 +37,7 @@ const groceries = [
   },
   {
     name: "Garam Masala",
-    image: "https://cdn-icons-png.flaticon.com/512/3082/3082004.png",
+    image: "https://cdn-icons-png.flaticon.com/512/3081/3081986.png",
     description: "Authentic blend of ground spices, 100g pack. Perfect for Indian curries.",
     price: "₹85",
     originalPrice: "₹95",
@@ -49,7 +49,7 @@ const groceries = [
   },
   {
     name: "Fresh Paneer",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2515/2515274.png",
     description: "Fresh cottage cheese, 200g pack. Made daily with pure milk.",
     price: "₹80",
     originalPrice: "₹90",
@@ -61,7 +61,7 @@ const groceries = [
   },
   {
     name: "Pure Cow Ghee",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2515/2515274.png",
     description: "Pure cow ghee, 500ml jar. Traditional churned for authentic taste.",
     price: "₹450",
     originalPrice: "₹520",
@@ -73,7 +73,7 @@ const groceries = [
   },
   {
     name: "Whole Wheat Atta",
-    image: "https://cdn-icons-png.flaticon.com/512/2548/2548555.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2515/2515274.png",
     description: "Whole wheat flour, 5kg pack. Stone ground for better nutrition.",
     price: "₹250",
     originalPrice: "₹280",
@@ -85,7 +85,7 @@ const groceries = [
   },
   {
     name: "Assam Tea Powder",
-    image: "https://cdn-icons-png.flaticon.com/512/1864/1864001.png",
+    image: "https://cdn-icons-png.flaticon.com/512/924/924915.png",
     description: "Premium Assam tea leaves, 250g pack. Strong and aromatic blend.",
     price: "₹120",
     originalPrice: "₹140",
@@ -97,7 +97,7 @@ const groceries = [
   },
   {
     name: "Masala Papad",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+    image: "https://cdn-icons-png.flaticon.com/512/3081/3081986.png",
     description: "Spicy lentil wafers, 200g pack. Crispy and flavorful snack.",
     price: "₹60",
     originalPrice: "₹70",
@@ -133,7 +133,7 @@ const groceries = [
   },
   {
     name: "Coconut Oil",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2515/2515274.png",
     description: "Pure coconut oil, 500ml bottle. Cold-pressed for maximum nutrition.",
     price: "₹180",
     originalPrice: "₹200",
@@ -145,7 +145,7 @@ const groceries = [
   },
   {
     name: "Onions",
-    image: "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
+    image: "https://cdn-icons-png.flaticon.com/512/765/765560.png",
     description: "Fresh red onions, 1kg pack. Essential for Indian cooking.",
     price: "₹40",
     originalPrice: "₹50",
@@ -157,7 +157,7 @@ const groceries = [
   },
   {
     name: "Potatoes",
-    image: "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
+    image: "https://cdn-icons-png.flaticon.com/512/590/590779.png",
     description: "Fresh potatoes, 2kg pack. Versatile vegetable for various dishes.",
     price: "₹60",
     originalPrice: "₹70",
@@ -169,7 +169,7 @@ const groceries = [
   },
   {
     name: "Tomatoes",
-    image: "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
+    image: "https://cdn-icons-png.flaticon.com/512/765/765557.png",
     description: "Fresh ripe tomatoes, 1kg pack. Perfect for curries and salads.",
     price: "₹35",
     originalPrice: "₹45",
@@ -181,7 +181,7 @@ const groceries = [
   },
   {
     name: "Namkeen Mix",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
+    image: "https://cdn-icons-png.flaticon.com/512/3081/3081986.png",
     description: "Assorted namkeen mix, 250g pack. Perfect tea-time snack.",
     price: "₹95",
     originalPrice: "₹110",
@@ -193,7 +193,7 @@ const groceries = [
   },
   {
     name: "Cardamom",
-    image: "https://cdn-icons-png.flaticon.com/512/3082/3082004.png",
+    image: "https://cdn-icons-png.flaticon.com/512/5769/5769174.png",
     description: "Premium green cardamom, 50g pack. Aromatic spice for desserts.",
     price: "₹320",
     originalPrice: "₹350",
@@ -264,6 +264,7 @@ const closeCart = document.querySelector(".close-cart");
 const closeWishlist = document.querySelector(".close-wishlist");
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
+const categorySelect = document.getElementById("category-select");
 const overlay = document.getElementById("overlay");
 const productCount = document.getElementById("product-count");
 const sortSelect = document.getElementById("sort-select");
@@ -293,6 +294,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set current year in footer
   currentYear.textContent = new Date().getFullYear();
 
+  // Initialize category dropdown to "All Categories"
+  if (categorySelect) {
+    categorySelect.value = "all";
+  }
+
   displayGroceries(groceries);
   setupEventListeners();
   loadCartFromStorage();
@@ -316,6 +322,9 @@ function setupEventListeners() {
     if (e.key === "Enter") searchGroceries();
   });
   searchInput.addEventListener("input", debounce(searchGroceries, 300));
+  
+  // Category dropdown functionality
+  categorySelect.addEventListener("change", handleCategoryChange);
 
   // Trending search tags
   document.querySelectorAll(".trending-item").forEach((tag) => {
@@ -477,24 +486,35 @@ function handleCategoryFilter(e) {
   e.preventDefault();
   const category = e.target.getAttribute("data-category") || "all";
   filterByCategory(category);
+  // Update dropdown to match
+  categorySelect.value = category;
+}
+
+// Handle category dropdown change
+function handleCategoryChange() {
+  const selectedCategory = categorySelect.value;
+  filterByCategory(selectedCategory);
 }
 
 // Search functionality with debouncing
 function searchGroceries() {
   const searchTerm = searchInput.value.toLowerCase().trim();
+  const selectedCategory = categorySelect.value;
   let filtered = groceries;
 
+  // Filter by category first
+  if (selectedCategory !== "all") {
+    filtered = filtered.filter((item) => item.category === selectedCategory);
+  }
+
+  // Then filter by search term
   if (searchTerm) {
-    filtered = groceries.filter(
+    filtered = filtered.filter(
       (item) =>
         item.name.toLowerCase().includes(searchTerm) ||
         item.description.toLowerCase().includes(searchTerm) ||
         item.category.toLowerCase().includes(searchTerm),
     );
-  }
-
-  if (currentCategory !== "all") {
-    filtered = filtered.filter((item) => item.category === currentCategory);
   }
 
   const sorted = sortGroceries(filtered, currentSort);
