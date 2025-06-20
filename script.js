@@ -63,8 +63,8 @@ const cartSidebar = document.getElementById("cart-sidebar");
 const wishlistSidebar = document.getElementById("wishlist-sidebar");
 const cartItems = document.getElementById("cart-items");
 const wishlistItems = document.getElementById("wishlist-items");
-const cartCount = document.querySelector(".cart-count");
-const wishlistCount = document.querySelector(".wishlist-count");
+const cartCount = document.querySelector(".cart-badge");
+// Wishlist count removed from header
 const cartTotal = document.getElementById("cart-total");
 const closeCart = document.querySelector(".close-cart");
 const closeWishlist = document.querySelector(".close-wishlist");
@@ -107,6 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
   loadCartFromStorage();
   loadWishlistFromStorage();
   checkLoginStatus();
+  
+  // Initialize cart display
+  updateCart();
 
   // Hide loading screen after everything is loaded
   setTimeout(() => {
@@ -134,14 +137,7 @@ function setupEventListeners() {
   // Category dropdown functionality
   categorySelect.addEventListener("change", handleCategoryChange);
 
-  // Trending search tags
-  document.querySelectorAll(".trending-item").forEach((tag) => {
-    tag.addEventListener("click", (e) => {
-      const searchTerm = e.target.getAttribute("data-search");
-      searchInput.value = searchTerm;
-      searchProducts();
-    });
-  });
+
 
   // Navigation and filters
   document.querySelectorAll(".nav-link, .filter-tag").forEach((link) => {
@@ -488,8 +484,41 @@ function updateCart() {
     });
   }
 
+  // Update cart total in sidebar
   cartTotal.textContent = `₹${total.toFixed(2)}`;
-  cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+  
+  // Update cart count and price in header with animation
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  
+  // Animate cart badge update
+  if (cartCount && cartCount.textContent !== totalItems.toString()) {
+    cartCount.style.transform = 'scale(1.3)';
+    cartCount.style.background = '#10b981';
+    setTimeout(() => {
+      cartCount.style.transform = 'scale(1)';
+      cartCount.style.background = '#ef4444';
+    }, 300);
+  }
+  if (cartCount) {
+    cartCount.textContent = totalItems;
+    // Hide badge when count is 0
+    cartCount.style.display = totalItems > 0 ? 'block' : 'none';
+  }
+  
+  // Update cart price in header with animation
+  const cartPriceElement = document.querySelector('.cart-price');
+  if (cartPriceElement) {
+    const newPrice = `₹${total.toFixed(2)}`;
+    if (cartPriceElement.textContent !== newPrice) {
+      cartPriceElement.style.transform = 'scale(1.1)';
+      cartPriceElement.style.color = '#fbbf24';
+      setTimeout(() => {
+        cartPriceElement.style.transform = 'scale(1)';
+        cartPriceElement.style.color = '';
+      }, 300);
+    }
+    cartPriceElement.textContent = newPrice;
+  }
 }
 
 // Wishlist functions
@@ -542,7 +571,7 @@ function updateWishlist() {
     });
   }
 
-  wishlistCount.textContent = wishlist.length;
+  // No longer updating wishlist count in header since we removed it
 }
 
 function updateWishlistButtons() {

@@ -74,41 +74,33 @@
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
-                        <div class="trending-searches">
-                            <span class="trending-label">Trending:</span>
-                            <div class="trending-items">
-                                <span class="trending-item" data-search="basmati rice">Basmati Rice</span>
-                                <span class="trending-item" data-search="turmeric">Turmeric</span>
-                                <span class="trending-item" data-search="ghee">Ghee</span>
-                                <span class="trending-item" data-search="dal">Dal</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 <div class="header-right">
                     <div class="auth-buttons">
-                        <button class="btn btn-outline" id="login-btn">
+                        <button class="btn btn-outline compact-btn" id="login-btn">
                             <i class="fas fa-user"></i>
                             Login
                         </button>
-                        <!-- <button class="btn btn-primary" id="signup-btn">
-                            <i class="fas fa-user-plus"></i>
-                            Sign Up
-                        </button> -->
                     </div>
 
+                    <div class="divider-line"></div>
+
                     <div class="header-actions">
-                        <button class="action-btn" id="wishlist-icon">
+                        <button class="action-btn wishlist-btn-header" id="wishlist-icon">
                             <i class="fas fa-heart"></i>
                             <span class="action-text">Wishlist</span>
-                            <span class="badge wishlist-count">0</span>
                         </button>
-                        <button class="action-btn cart-btn" id="cart-icon">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="action-text">Cart</span>
-                            <span class="badge cart-count">0</span>
-                        </button>
+                        <div class="cart-container">
+                            <span class="cart-badge">0</span>
+                            <button class="action-btn cart-btn" id="cart-icon">
+                                <div class="cart-info">
+                                    <span class="action-text">Cart</span>
+                                    <span class="cart-price">₹0.00</span>
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -161,7 +153,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <!-- <section class="hero"> .        ROUNAK ETA TOR JONNE.
         <div class="hero-pattern"></div>
         <div class="hero-circles">
             <div class="circle circle-1"></div>
@@ -269,7 +261,7 @@
                 </path>
             </svg>
         </div>
-    </section>
+    </section> -->
 
     <!-- Products Section -->
     <section id="products" class="products-section">
