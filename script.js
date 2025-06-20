@@ -1,245 +1,51 @@
-const groceries = [
-  {
-    name: "Basmati Rice",
-    image: "https://cdn-icons-png.flaticon.com/512/3174/3174880.png",
-    description: "Premium long-grain basmati rice, 5kg pack. Perfect for biryanis and pulao.",
-    price: "₹450",
-    originalPrice: "₹500",
-    category: "staples",
-    rating: 4.5,
-    reviews: 128,
-    inStock: true,
-    discount: 10,
-  },
-  {
-    name: "Toor Dal",
-    image: "https://cdn-icons-png.flaticon.com/512/2548/2548555.png",
-    description: "Yellow split pigeon peas, 1kg pack. Rich in protein and essential nutrients.",
-    price: "₹160",
-    originalPrice: "₹180",
-    category: "staples",
-    rating: 4.3,
-    reviews: 95,
-    inStock: true,
-    discount: 11,
-  },
-  {
-    name: "Turmeric Powder",
-    image: "https://cdn-icons-png.flaticon.com/512/5769/5769174.png",
-    description: "Pure organic turmeric powder, 100g pack. Natural anti-inflammatory properties.",
-    price: "₹45",
-    originalPrice: "₹55",
-    category: "spices",
-    rating: 4.7,
-    reviews: 203,
-    inStock: true,
-    discount: 18,
-  },
-  {
-    name: "Garam Masala",
-    image: "https://cdn-icons-png.flaticon.com/512/3082/3082004.png",
-    description: "Authentic blend of ground spices, 100g pack. Perfect for Indian curries.",
-    price: "₹85",
-    originalPrice: "₹95",
-    category: "spices",
-    rating: 4.6,
-    reviews: 156,
-    inStock: true,
-    discount: 11,
-  },
-  {
-    name: "Fresh Paneer",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
-    description: "Fresh cottage cheese, 200g pack. Made daily with pure milk.",
-    price: "₹80",
-    originalPrice: "₹90",
-    category: "dairy",
-    rating: 4.4,
-    reviews: 87,
-    inStock: true,
-    discount: 11,
-  },
-  {
-    name: "Pure Cow Ghee",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
-    description: "Pure cow ghee, 500ml jar. Traditional churned for authentic taste.",
-    price: "₹450",
-    originalPrice: "₹520",
-    category: "dairy",
-    rating: 4.8,
-    reviews: 234,
-    inStock: true,
-    discount: 13,
-  },
-  {
-    name: "Whole Wheat Atta",
-    image: "https://cdn-icons-png.flaticon.com/512/2548/2548555.png",
-    description: "Whole wheat flour, 5kg pack. Stone ground for better nutrition.",
-    price: "₹250",
-    originalPrice: "₹280",
-    category: "staples",
-    rating: 4.2,
-    reviews: 167,
-    inStock: true,
-    discount: 11,
-  },
-  {
-    name: "Assam Tea Powder",
-    image: "https://cdn-icons-png.flaticon.com/512/1864/1864001.png",
-    description: "Premium Assam tea leaves, 250g pack. Strong and aromatic blend.",
-    price: "₹120",
-    originalPrice: "₹140",
-    category: "beverages",
-    rating: 4.5,
-    reviews: 145,
-    inStock: true,
-    discount: 14,
-  },
-  {
-    name: "Masala Papad",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
-    description: "Spicy lentil wafers, 200g pack. Crispy and flavorful snack.",
-    price: "₹60",
-    originalPrice: "₹70",
-    category: "snacks",
-    rating: 4.1,
-    reviews: 76,
-    inStock: true,
-    discount: 14,
-  },
-  {
-    name: "Chana Dal",
-    image: "https://cdn-icons-png.flaticon.com/512/2548/2548555.png",
-    description: "Split Bengal gram, 1kg pack. High protein content and great taste.",
-    price: "₹130",
-    originalPrice: "₹150",
-    category: "staples",
-    rating: 4.3,
-    reviews: 112,
-    inStock: true,
-    discount: 13,
-  },
-  {
-    name: "Red Chili Powder",
-    image: "https://cdn-icons-png.flaticon.com/512/5769/5769174.png",
-    description: "Premium quality red chili powder, 200g pack. Adds perfect heat to dishes.",
-    price: "₹75",
-    originalPrice: "₹85",
-    category: "spices",
-    rating: 4.4,
-    reviews: 89,
-    inStock: true,
-    discount: 12,
-  },
-  {
-    name: "Coconut Oil",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
-    description: "Pure coconut oil, 500ml bottle. Cold-pressed for maximum nutrition.",
-    price: "₹180",
-    originalPrice: "₹200",
-    category: "dairy",
-    rating: 4.6,
-    reviews: 156,
-    inStock: true,
-    discount: 10,
-  },
-  {
-    name: "Onions",
-    image: "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
-    description: "Fresh red onions, 1kg pack. Essential for Indian cooking.",
-    price: "₹40",
-    originalPrice: "₹50",
-    category: "vegetables",
-    rating: 4.2,
-    reviews: 234,
-    inStock: true,
-    discount: 20,
-  },
-  {
-    name: "Potatoes",
-    image: "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
-    description: "Fresh potatoes, 2kg pack. Versatile vegetable for various dishes.",
-    price: "₹60",
-    originalPrice: "₹70",
-    category: "vegetables",
-    rating: 4.1,
-    reviews: 189,
-    inStock: true,
-    discount: 14,
-  },
-  {
-    name: "Tomatoes",
-    image: "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
-    description: "Fresh ripe tomatoes, 1kg pack. Perfect for curries and salads.",
-    price: "₹35",
-    originalPrice: "₹45",
-    category: "vegetables",
-    rating: 4.3,
-    reviews: 167,
-    inStock: true,
-    discount: 22,
-  },
-  {
-    name: "Namkeen Mix",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
-    description: "Assorted namkeen mix, 250g pack. Perfect tea-time snack.",
-    price: "₹95",
-    originalPrice: "₹110",
-    category: "snacks",
-    rating: 4.0,
-    reviews: 78,
-    inStock: true,
-    discount: 14,
-  },
-  {
-    name: "Cardamom",
-    image: "https://cdn-icons-png.flaticon.com/512/3082/3082004.png",
-    description: "Premium green cardamom, 50g pack. Aromatic spice for desserts.",
-    price: "₹320",
-    originalPrice: "₹350",
-    category: "spices",
-    rating: 4.8,
-    reviews: 145,
-    inStock: true,
-    discount: 9,
-  },
-  {
-    name: "Masala Chai",
-    image: "https://cdn-icons-png.flaticon.com/512/1864/1864001.png",
-    description: "Spiced tea blend, 200g pack. Perfect for authentic Indian chai.",
-    price: "₹140",
-    originalPrice: "₹160",
-    category: "beverages",
-    rating: 4.5,
-    reviews: 198,
-    inStock: true,
-    discount: 13,
-  },
-  {
-    name: "Yogurt",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
-    description: "Fresh yogurt, 500g pack. Creamy and rich in probiotics.",
-    price: "₹45",
-    originalPrice: "₹55",
-    category: "dairy",
-    rating: 4.3,
-    reviews: 123,
-    inStock: true,
-    discount: 18,
-  },
-  {
-    name: "Biscuits Assorted",
-    image: "https://cdn-icons-png.flaticon.com/512/2372/2372241.png",
-    description: "Mixed biscuits pack, 400g. Variety of flavors for the whole family.",
-    price: "₹85",
-    originalPrice: "₹100",
-    category: "snacks",
-    rating: 4.2,
-    reviews: 156,
-    inStock: true,
-    discount: 15,
-  },
-]
+// Global variables - products will be loaded from products-data.js
+
+// Initialize products - no need to load from JSON anymore
+function loadProducts() {
+  displayProducts(products);
+  updateProductCount();
+}
+
+// Utility function to add a new product to a specific category
+function addProductToCategory(categoryName, productData) {
+  if (typeof productsByCategory !== 'undefined' && productsByCategory[categoryName]) {
+    // Remove category property if it exists (since it's now implicit)
+    const { category, ...cleanProductData } = productData;
+    
+    productsByCategory[categoryName].push(cleanProductData);
+    
+    // Refresh the global products array
+    if (typeof getAllProducts !== 'undefined') {
+      // Update the global products array
+      products.length = 0; // Clear existing array
+      products.push(...getAllProducts()); // Repopulate with new data
+      
+      // Refresh the display if needed
+      if (currentCategory === "all" || currentCategory === categoryName) {
+        filterByCategory(currentCategory);
+      }
+    }
+    return true;
+  }
+  console.error(`Category "${categoryName}" not found or productsByCategory not available`);
+  return false;
+}
+
+// Utility function to get category statistics
+function getCategoryStats() {
+  if (typeof productsByCategory !== 'undefined') {
+    const stats = {};
+    for (const [category, items] of Object.entries(productsByCategory)) {
+      stats[category] = {
+        count: items.length,
+        inStock: items.filter(item => item.inStock).length,
+        avgRating: items.reduce((sum, item) => sum + item.rating, 0) / items.length
+      };
+    }
+    return stats;
+  }
+  return null;
+}
 
 // Global variables
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -250,20 +56,21 @@ let isLoggedIn = false;
 let currentUser = null;
 
 // DOM elements
-const groceryList = document.getElementById("grocery-list");
+const productList = document.getElementById("grocery-list");
 const cartIcon = document.getElementById("cart-icon");
 const wishlistIcon = document.getElementById("wishlist-icon");
 const cartSidebar = document.getElementById("cart-sidebar");
 const wishlistSidebar = document.getElementById("wishlist-sidebar");
 const cartItems = document.getElementById("cart-items");
 const wishlistItems = document.getElementById("wishlist-items");
-const cartCount = document.querySelector(".cart-count");
-const wishlistCount = document.querySelector(".wishlist-count");
+const cartCount = document.querySelector(".cart-badge");
+// Wishlist count removed from header
 const cartTotal = document.getElementById("cart-total");
 const closeCart = document.querySelector(".close-cart");
 const closeWishlist = document.querySelector(".close-wishlist");
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
+const categorySelect = document.getElementById("category-select");
 const overlay = document.getElementById("overlay");
 const productCount = document.getElementById("product-count");
 const sortSelect = document.getElementById("sort-select");
@@ -271,34 +78,44 @@ const backToTop = document.getElementById("back-to-top");
 const loadingScreen = document.getElementById("loading-screen");
 const currentYear = document.getElementById("current-year");
 const loginBtn = document.getElementById("login-btn");
-// const signupBtn = document.getElementById("signup-btn");
+// const signupBtn = document.getElementById("signup-btn"); // Commented out in HTML
 const loginModal = document.getElementById("login-modal");
-const signupModal = document.getElementById("signup-modal");
+// const signupModal = document.getElementById("signup-modal"); // Commented out in HTML
 const closeLoginModal = document.getElementById("close-login-modal");
-const closeSignupModal = document.getElementById("close-signup-modal");
+// const closeSignupModal = document.getElementById("close-signup-modal"); // Commented out in HTML
 const switchToSignup = document.getElementById("switch-to-signup");
-const switchToLogin = document.getElementById("switch-to-login");
+// const switchToLogin = document.getElementById("switch-to-login"); // Commented out in HTML
 const loginForm = document.getElementById("login-form");
-const signupForm = document.getElementById("signup-form");
+// const signupForm = document.getElementById("signup-form"); // Commented out in HTML
 const filterTags = document.querySelectorAll('.filter-tag');
 
 // Initialize the application
 document.addEventListener("DOMContentLoaded", () => {
-  // Show loading screen
+  // Set current year in footer
+  currentYear.textContent = new Date().getFullYear();
+
+  // Initialize category dropdown to "All Categories"
+  if (categorySelect) {
+    categorySelect.value = "all";
+  }
+
+  // Load products
+  loadProducts();
+  
+  // Setup all event listeners
+  setupEventListeners();
+  loadCartFromStorage();
+  loadWishlistFromStorage();
+  checkLoginStatus();
+  
+  // Initialize cart display
+  updateCart();
+
+  // Hide loading screen after everything is loaded
   setTimeout(() => {
     loadingScreen.classList.add("hidden");
     document.body.style.overflow = "auto";
   }, 1500);
-
-  // Set current year in footer
-  currentYear.textContent = new Date().getFullYear();
-
-  displayGroceries(groceries);
-  setupEventListeners();
-  loadCartFromStorage();
-  loadWishlistFromStorage();
-  updateProductCount();
-  checkLoginStatus();
 });
 
 // Setup event listeners
@@ -311,20 +128,16 @@ function setupEventListeners() {
   overlay.addEventListener("click", closeAllSidebars);
 
   // Search functionality
-  searchBtn.addEventListener("click", searchGroceries);
+  searchBtn.addEventListener("click", searchProducts);
   searchInput.addEventListener("keyup", (e) => {
-    if (e.key === "Enter") searchGroceries();
+    if (e.key === "Enter") searchProducts();
   });
-  searchInput.addEventListener("input", debounce(searchGroceries, 300));
+  searchInput.addEventListener("input", debounce(searchProducts, 300));
+  
+  // Category dropdown functionality
+  categorySelect.addEventListener("change", handleCategoryChange);
 
-  // Trending search tags
-  document.querySelectorAll(".trending-item").forEach((tag) => {
-    tag.addEventListener("click", (e) => {
-      const searchTerm = e.target.getAttribute("data-search");
-      searchInput.value = searchTerm;
-      searchGroceries();
-    });
-  });
+
 
   // Navigation and filters
   document.querySelectorAll(".nav-link, .filter-tag").forEach((link) => {
@@ -340,39 +153,39 @@ function setupEventListeners() {
 
   // Auth modals
   if (loginBtn) loginBtn.addEventListener("click", () => openModal("login"));
-  if (signupBtn) signupBtn.addEventListener("click", () => openModal("signup"));
-  closeLoginModal.addEventListener("click", () => closeModal("login"));
-  closeSignupModal.addEventListener("click", () => closeModal("signup"));
-  switchToSignup.addEventListener("click", (e) => {
+  // if (signupBtn) signupBtn.addEventListener("click", () => openModal("signup")); // Commented out
+  if (closeLoginModal) closeLoginModal.addEventListener("click", () => closeModal("login"));
+  // if (closeSignupModal) closeSignupModal.addEventListener("click", () => closeModal("signup")); // Commented out
+  if (switchToSignup) switchToSignup.addEventListener("click", (e) => {
     e.preventDefault();
     closeModal("login");
     openModal("signup");
   });
-  switchToLogin.addEventListener("click", (e) => {
-    e.preventDefault();
-    closeModal("signup");
-    openModal("login");
-  });
+  // if (switchToLogin) switchToLogin.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   closeModal("signup");
+  //   openModal("login");
+  // }); // Commented out
 
   // Auth forms
-  loginForm.addEventListener("submit", handleLogin);
-  signupForm.addEventListener("submit", handleSignup);
+  if (loginForm) loginForm.addEventListener("submit", handleLogin);
+  // if (signupForm) signupForm.addEventListener("submit", handleSignup); // Commented out
 
   // Keyboard shortcuts
   document.addEventListener("keydown", handleKeyboardShortcuts);
 
   // Product actions
-  groceryList.addEventListener('click', handleProductActions);
+  productList.addEventListener('click', handleProductActions);
   cartItems.addEventListener('click', handleCartActions);
 }
 
-// Display groceries with enhanced UI
-function displayGroceries(items) {
-  groceryList.innerHTML = "";
-  groceryList.className = "products-grid";
+// Display products with enhanced UI
+function displayProducts(items) {
+  productList.innerHTML = "";
+  productList.className = "products-grid";
 
   if (items.length === 0) {
-    groceryList.innerHTML = `
+    productList.innerHTML = `
       <div class="empty-state">
         <i class="fas fa-box-open"></i>
         <p>No products found</p>
@@ -426,7 +239,7 @@ function displayGroceries(items) {
         </div>
       </div>
     `;
-    groceryList.appendChild(div);
+    productList.appendChild(div);
   });
 
   updateProductCount(items.length);
@@ -454,13 +267,22 @@ function generateStars(rating) {
   return stars;
 }
 
-// Filter groceries by category
+// Filter products by category - now optimized to use categorized structure
 function filterByCategory(category) {
   currentCategory = category;
-  const filtered = category === "all" ? groceries : groceries.filter((item) => item.category === category);
+  
+  let filtered;
+  if (category === "all") {
+    filtered = products; // Use the flattened array for all products
+  } else {
+    // Use the optimized category-specific function when available
+    filtered = typeof getProductsByCategory !== 'undefined' ? 
+      getProductsByCategory(category) : 
+      products.filter((item) => item.category === category);
+  }
 
-  const sorted = sortGroceries(filtered, currentSort);
-  displayGroceries(sorted);
+  const sorted = sortProducts(filtered, currentSort);
+  displayProducts(sorted);
 
   // Update active category
   document.querySelectorAll(".nav-link, .filter-tag").forEach((link) => {
@@ -477,15 +299,30 @@ function handleCategoryFilter(e) {
   e.preventDefault();
   const category = e.target.getAttribute("data-category") || "all";
   filterByCategory(category);
+  // Update dropdown to match
+  categorySelect.value = category;
+}
+
+// Handle category dropdown change
+function handleCategoryChange() {
+  const selectedCategory = categorySelect.value;
+  filterByCategory(selectedCategory);
 }
 
 // Search functionality with debouncing
-function searchGroceries() {
+function searchProducts() {
   const searchTerm = searchInput.value.toLowerCase().trim();
-  let filtered = groceries;
+  const selectedCategory = categorySelect.value;
+  let filtered = products;
 
+  // Filter by category first
+  if (selectedCategory !== "all") {
+    filtered = filtered.filter((item) => item.category === selectedCategory);
+  }
+
+  // Then filter by search term
   if (searchTerm) {
-    filtered = groceries.filter(
+    filtered = filtered.filter(
       (item) =>
         item.name.toLowerCase().includes(searchTerm) ||
         item.description.toLowerCase().includes(searchTerm) ||
@@ -493,12 +330,8 @@ function searchGroceries() {
     );
   }
 
-  if (currentCategory !== "all") {
-    filtered = filtered.filter((item) => item.category === currentCategory);
-  }
-
-  const sorted = sortGroceries(filtered, currentSort);
-  displayGroceries(sorted);
+  const sorted = sortProducts(filtered, currentSort);
+  displayProducts(sorted);
 
   // Show search results message
   if (searchTerm && filtered.length === 0) {
@@ -519,8 +352,8 @@ function debounce(func, wait) {
   };
 }
 
-// Sort groceries
-function sortGroceries(items, sortType) {
+// Sort products
+function sortProducts(items, sortType) {
   const sortedItems = [...items];
 
   switch (sortType) {
@@ -547,17 +380,17 @@ function sortGroceries(items, sortType) {
 function handleSort(e) {
   currentSort = e.target.value;
   const currentItems = getCurrentItems();
-  const sorted = sortGroceries(currentItems, currentSort);
-  displayGroceries(sorted);
+  const sorted = sortProducts(currentItems, currentSort);
+  displayProducts(sorted);
 }
 
 // Get current filtered items
 function getCurrentItems() {
   const searchTerm = searchInput.value.toLowerCase().trim();
-  let filtered = groceries;
+  let filtered = products;
 
   if (searchTerm) {
-    filtered = groceries.filter(
+    filtered = products.filter(
       (item) =>
         item.name.toLowerCase().includes(searchTerm) ||
         item.description.toLowerCase().includes(searchTerm) ||
@@ -574,7 +407,7 @@ function getCurrentItems() {
 
 // Cart functions
 function addToCart(itemName) {
-  const item = groceries.find((g) => g.name === itemName);
+  const item = products.find((g) => g.name === itemName);
   const existingItem = cart.find((i) => i.name === itemName);
 
   if (existingItem) {
@@ -651,13 +484,46 @@ function updateCart() {
     });
   }
 
+  // Update cart total in sidebar
   cartTotal.textContent = `₹${total.toFixed(2)}`;
-  cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+  
+  // Update cart count and price in header with animation
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  
+  // Animate cart badge update
+  if (cartCount && cartCount.textContent !== totalItems.toString()) {
+    cartCount.style.transform = 'scale(1.3)';
+    cartCount.style.background = '#10b981';
+    setTimeout(() => {
+      cartCount.style.transform = 'scale(1)';
+      cartCount.style.background = '#ef4444';
+    }, 300);
+  }
+  if (cartCount) {
+    cartCount.textContent = totalItems;
+    // Hide badge when count is 0
+    cartCount.style.display = totalItems > 0 ? 'block' : 'none';
+  }
+  
+  // Update cart price in header with animation
+  const cartPriceElement = document.querySelector('.cart-price');
+  if (cartPriceElement) {
+    const newPrice = `₹${total.toFixed(2)}`;
+    if (cartPriceElement.textContent !== newPrice) {
+      cartPriceElement.style.transform = 'scale(1.1)';
+      cartPriceElement.style.color = '#fbbf24';
+      setTimeout(() => {
+        cartPriceElement.style.transform = 'scale(1)';
+        cartPriceElement.style.color = '';
+      }, 300);
+    }
+    cartPriceElement.textContent = newPrice;
+  }
 }
 
 // Wishlist functions
 function toggleWishlist(itemName) {
-  const item = groceries.find((g) => g.name === itemName);
+  const item = products.find((g) => g.name === itemName);
   const existingIndex = wishlist.findIndex((w) => w.name === itemName);
 
   if (existingIndex > -1) {
@@ -705,7 +571,7 @@ function updateWishlist() {
     });
   }
 
-  wishlistCount.textContent = wishlist.length;
+  // No longer updating wishlist count in header since we removed it
 }
 
 function updateWishlistButtons() {
@@ -849,7 +715,7 @@ function updateAuthUI() {
 
 // Quick view function
 function quickView(itemName) {
-  const item = groceries.find((g) => g.name === itemName);
+  const item = products.find((g) => g.name === itemName);
   showNotification(`Quick view for ${item.name} - Feature coming soon!`, "info");
 }
 
@@ -936,7 +802,7 @@ function saveUserToStorage() {
 }
 
 // Utility functions
-function updateProductCount(count = groceries.length) {
+function updateProductCount(count = products.length) {
   productCount.textContent = `${count} product${count !== 1 ? "s" : ""}`;
 }
 
@@ -1086,84 +952,16 @@ document.addEventListener("DOMContentLoaded", () => {
   elementsToAnimate.forEach((el) => observer.observe(el));
 });
 
-// Product actions
+// Product actions - these are handled by onclick attributes in the HTML
 function handleProductActions(e) {
-  const target = e.target;
-  const productId = target.closest('[data-product-id]')?.getAttribute('data-product-id');
-  
-  if (!productId) return;
-
-  if (target.classList.contains('wishlist-btn')) {
-    toggleWishlist(productId);
-  } else if (target.classList.contains('add-to-cart-btn')) {
-    addToCart(productId);
-  } else if (target.classList.contains('quantity-btn')) {
-    adjustQuantity(productId, target.classList.contains('plus'));
-  }
+  // Product interactions are handled via onclick attributes
+  // This function can be used for future event delegation if needed
 }
 
-// Cart actions
+// Cart actions - these are handled by onclick attributes in the HTML  
 function handleCartActions(e) {
-  const target = e.target;
-  const productId = target.closest('[data-product-id]')?.getAttribute('data-product-id');
-  
-  if (!productId) return;
-
-  if (target.classList.contains('remove-item')) {
-    removeFromCart(productId);
-  } else if (target.classList.contains('quantity-btn')) {
-    adjustCartQuantity(productId, target.classList.contains('plus'));
-  }
+  // Cart interactions are handled via onclick attributes
+  // This function can be used for future event delegation if needed
 }
 
-// Adjust quantity
-function adjustQuantity(productId, increase) {
-  const item = cart.find(item => item.id === productId);
-  if (!item) return;
-
-  const product = storeManager.getProduct(productId);
-  if (!product) return;
-
-  if (increase) {
-    if (item.quantity < product.stock) {
-      item.quantity++;
-    } else {
-      alert('Not enough stock available');
-    }
-  } else {
-    if (item.quantity > 1) {
-      item.quantity--;
-    } else {
-      removeFromCart(productId);
-      return;
-    }
-  }
-
-  updateCart();
-}
-
-// Adjust cart quantity
-function adjustCartQuantity(productId, increase) {
-  const item = cart.find(item => item.id === productId);
-  if (!item) return;
-
-  const product = storeManager.getProduct(productId);
-  if (!product) return;
-
-  if (increase) {
-    if (item.quantity < product.stock) {
-      item.quantity++;
-    } else {
-      alert('Not enough stock available');
-    }
-  } else {
-    if (item.quantity > 1) {
-      item.quantity--;
-    } else {
-      removeFromCart(productId);
-      return;
-    }
-  }
-
-  updateCart();
-}
+// These functions are handled by the existing updateQuantity function above

@@ -1,0 +1,7 @@
+something is coming close to you, near and now just for you. - tagline
+
+
+
+
+
+make another file for js which holds products json and link that to script.js.
