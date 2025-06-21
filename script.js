@@ -11,15 +11,15 @@ function addProductToCategory(categoryName, productData) {
   if (typeof productsByCategory !== 'undefined' && productsByCategory[categoryName]) {
     // Remove category property if it exists (since it's now implicit)
     const { category, ...cleanProductData } = productData;
-    
+
     productsByCategory[categoryName].push(cleanProductData);
-    
+
     // Refresh the global products array
     if (typeof getAllProducts !== 'undefined') {
       // Update the global products array
       products.length = 0; // Clear existing array
       products.push(...getAllProducts()); // Repopulate with new data
-      
+
       // Refresh the display if needed
       if (currentCategory === "all" || currentCategory === categoryName) {
         filterByCategory(currentCategory);
@@ -55,6 +55,10 @@ let currentSort = "default";
 let isLoggedIn = false;
 let currentUser = null;
 
+// Phone and OTP Login System
+let currentOTP = null;
+let phoneNumber = null;
+
 // DOM elements
 const productList = document.getElementById("grocery-list");
 const cartIcon = document.getElementById("cart-icon");
@@ -72,7 +76,6 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const categorySelect = document.getElementById("category-select");
 const overlay = document.getElementById("overlay");
-const productCount = document.getElementById("product-count");
 const sortSelect = document.getElementById("sort-select");
 const backToTop = document.getElementById("back-to-top");
 const loadingScreen = document.getElementById("loading-screen");
@@ -87,12 +90,15 @@ const switchToSignup = document.getElementById("switch-to-signup");
 // const switchToLogin = document.getElementById("switch-to-login"); // Commented out in HTML
 const loginForm = document.getElementById("login-form");
 // const signupForm = document.getElementById("signup-form"); // Commented out in HTML
-const filterTags = document.querySelectorAll('.filter-tag');
 
 // Initialize the application
 document.addEventListener("DOMContentLoaded", () => {
+  console.log('DOM loaded, initializing app...');
+
   // Set current year in footer
-  currentYear.textContent = new Date().getFullYear();
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
 
   // Initialize category dropdown to "All Categories"
   if (categorySelect) {
@@ -101,82 +107,146 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Load products
   loadProducts();
-  
+
   // Setup all event listeners
   setupEventListeners();
   loadCartFromStorage();
   loadWishlistFromStorage();
   checkLoginStatus();
-  
+
   // Initialize cart display
   updateCart();
 
+  // Update login button
+  updateLoginButton();
+
   // Hide loading screen after everything is loaded
   setTimeout(() => {
-    loadingScreen.classList.add("hidden");
+    if (loadingScreen) {
+      loadingScreen.classList.add("hidden");
+    }
     document.body.style.overflow = "auto";
   }, 1500);
+
+  // Render Shop by Category section
+  renderCategoryGrid();
+
+  console.log('App initialization complete');
 });
 
 // Setup event listeners
 function setupEventListeners() {
   // Cart and wishlist toggles
-  cartIcon.addEventListener("click", () => toggleSidebar("cart"));
-  wishlistIcon.addEventListener("click", () => toggleSidebar("wishlist"));
-  closeCart.addEventListener("click", () => closeSidebar("cart"));
-  closeWishlist.addEventListener("click", () => closeSidebar("wishlist"));
-  overlay.addEventListener("click", closeAllSidebars);
+  if (cartIcon) cartIcon.addEventListener("click", () => toggleSidebar("cart"));
+  if (wishlistIcon) wishlistIcon.addEventListener("click", () => toggleSidebar("wishlist"));
+  if (closeCart) closeCart.addEventListener("click", () => closeSidebar("cart"));
+  if (closeWishlist) closeWishlist.addEventListener("click", () => closeSidebar("wishlist"));
+  if (overlay) overlay.addEventListener("click", closeAllSidebars);
 
   // Search functionality
-  searchBtn.addEventListener("click", searchProducts);
-  searchInput.addEventListener("keyup", (e) => {
-    if (e.key === "Enter") searchProducts();
-  });
-  searchInput.addEventListener("input", debounce(searchProducts, 300));
-  
+  if (searchBtn) searchBtn.addEventListener("click", searchProducts);
+  if (searchInput) {
+    searchInput.addEventListener("keyup", (e) => {
+      if (e.key === "Enter") searchProducts();
+    });
+    searchInput.addEventListener("input", debounce(searchProducts, 300));
+  }
+
   // Category dropdown functionality
-  categorySelect.addEventListener("change", handleCategoryChange);
-
-
+  if (categorySelect) categorySelect.addEventListener("change", handleCategoryChange);
 
   // Navigation and filters
-  document.querySelectorAll(".nav-link, .filter-tag").forEach((link) => {
+  document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", handleCategoryFilter);
   });
 
   // Sort functionality
-  sortSelect.addEventListener("change", handleSort);
+  if (sortSelect) sortSelect.addEventListener("change", handleSort);
 
   // Back to top button
   window.addEventListener("scroll", handleScroll);
-  backToTop.addEventListener("click", scrollToTop);
+  if (backToTop) backToTop.addEventListener("click", scrollToTop);
 
   // Auth modals
-  if (loginBtn) loginBtn.addEventListener("click", () => openModal("login"));
-  // if (signupBtn) signupBtn.addEventListener("click", () => openModal("signup")); // Commented out
-  if (closeLoginModal) closeLoginModal.addEventListener("click", () => closeModal("login"));
-  // if (closeSignupModal) closeSignupModal.addEventListener("click", () => closeModal("signup")); // Commented out
-  if (switchToSignup) switchToSignup.addEventListener("click", (e) => {
-    e.preventDefault();
-    closeModal("login");
-    openModal("signup");
-  });
-  // if (switchToLogin) switchToLogin.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  //   closeModal("signup");
-  //   openModal("login");
-  // }); // Commented out
-
-  // Auth forms
-  if (loginForm) loginForm.addEventListener("submit", handleLogin);
-  // if (signupForm) signupForm.addEventListener("submit", handleSignup); // Commented out
-
-  // Keyboard shortcuts
-  document.addEventListener("keydown", handleKeyboardShortcuts);
+  if (loginBtn) {
+    loginBtn.addEventListener("click", () => openModal("login"));
+  }
+  if (closeLoginModal) {
+    closeLoginModal.addEventListener("click", () => closeModal("login"));
+  }
 
   // Product actions
-  productList.addEventListener('click', handleProductActions);
-  cartItems.addEventListener('click', handleCartActions);
+  if (productList) productList.addEventListener('click', handleProductActions);
+  if (cartItems) cartItems.addEventListener('click', handleCartActions);
+
+  // Phone form submission
+  const phoneForm = document.getElementById('phone-form');
+  if (phoneForm) {
+    phoneForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const phoneInput = document.getElementById('phone-number');
+      if (!phoneInput) return;
+
+      const phone = phoneInput.value.trim();
+
+      if (phone.length !== 10 || !/^\d+$/.test(phone)) {
+        showNotification('Please enter a valid 10-digit phone number', 'error');
+        return;
+      }
+
+      phoneNumber = phone;
+      generateAndSendOTP(phone);
+    });
+  }
+
+  // OTP form submission
+  const otpForm = document.getElementById('otp-form');
+  if (otpForm) {
+    otpForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const otpInput = document.getElementById('otp-input');
+      if (!otpInput) return;
+
+      const enteredOTP = otpInput.value.trim();
+
+      if (enteredOTP.length !== 6 || !/^\d+$/.test(enteredOTP)) {
+        showNotification('Please enter a valid 6-digit OTP', 'error');
+        return;
+      }
+
+      verifyOTP(enteredOTP);
+    });
+  }
+
+  // Resend OTP
+  const resendOtpBtn = document.getElementById('resend-otp');
+  if (resendOtpBtn) {
+    resendOtpBtn.addEventListener('click', function() {
+      if (phoneNumber) {
+        generateAndSendOTP(phoneNumber);
+      } else {
+        showNotification('Please enter a phone number first', 'error');
+      }
+    });
+  }
+
+  // Close modal when clicking outside
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal') || e.target.classList.contains('close-modal')) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        modal.style.display = 'none';
+      });
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Prevent modal from closing when clicking inside the modal content
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.modal') && !e.target.classList.contains('close-modal')) {
+      e.stopPropagation();
+    }
+  });
 }
 
 // Display products with enhanced UI
@@ -241,8 +311,6 @@ function displayProducts(items) {
     `;
     productList.appendChild(div);
   });
-
-  updateProductCount(items.length);
 }
 
 // Generate star rating
@@ -270,14 +338,14 @@ function generateStars(rating) {
 // Filter products by category - now optimized to use categorized structure
 function filterByCategory(category) {
   currentCategory = category;
-  
+
   let filtered;
   if (category === "all") {
     filtered = products; // Use the flattened array for all products
   } else {
     // Use the optimized category-specific function when available
-    filtered = typeof getProductsByCategory !== 'undefined' ? 
-      getProductsByCategory(category) : 
+    filtered = typeof getProductsByCategory !== 'undefined' ?
+      getProductsByCategory(category) :
       products.filter((item) => item.category === category);
   }
 
@@ -285,7 +353,7 @@ function filterByCategory(category) {
   displayProducts(sorted);
 
   // Update active category
-  document.querySelectorAll(".nav-link, .filter-tag").forEach((link) => {
+  document.querySelectorAll(".nav-link").forEach((link) => {
     link.classList.remove("active");
   });
 
@@ -313,30 +381,13 @@ function handleCategoryChange() {
 function searchProducts() {
   const searchTerm = searchInput.value.toLowerCase().trim();
   const selectedCategory = categorySelect.value;
-  let filtered = products;
-
-  // Filter by category first
-  if (selectedCategory !== "all") {
-    filtered = filtered.filter((item) => item.category === selectedCategory);
-  }
-
-  // Then filter by search term
-  if (searchTerm) {
-    filtered = filtered.filter(
-      (item) =>
-        item.name.toLowerCase().includes(searchTerm) ||
-        item.description.toLowerCase().includes(searchTerm) ||
-        item.category.toLowerCase().includes(searchTerm),
-    );
-  }
-
-  const sorted = sortProducts(filtered, currentSort);
-  displayProducts(sorted);
-
-  // Show search results message
-  if (searchTerm && filtered.length === 0) {
-    showNotification("No products found for your search.", "warning");
-  }
+  // Redirect to products.html with query params
+  let url = 'products.html';
+  const params = [];
+  if (searchTerm) params.push(`q=${encodeURIComponent(searchTerm)}`);
+  if (selectedCategory && selectedCategory !== 'all') params.push(`category=${encodeURIComponent(selectedCategory)}`);
+  if (params.length) url += '?' + params.join('&');
+  window.location.href = url;
 }
 
 // Debounce function
@@ -486,10 +537,10 @@ function updateCart() {
 
   // Update cart total in sidebar
   cartTotal.textContent = `₹${total.toFixed(2)}`;
-  
+
   // Update cart count and price in header with animation
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  
+
   // Animate cart badge update
   if (cartCount && cartCount.textContent !== totalItems.toString()) {
     cartCount.style.transform = 'scale(1.3)';
@@ -504,7 +555,7 @@ function updateCart() {
     // Hide badge when count is 0
     cartCount.style.display = totalItems > 0 ? 'block' : 'none';
   }
-  
+
   // Update cart price in header with animation
   const cartPriceElement = document.querySelector('.cart-price');
   if (cartPriceElement) {
@@ -612,21 +663,39 @@ function closeAllSidebars() {
   document.body.style.overflow = "auto";
 }
 
-// Auth modal functions
-function openModal(type) {
-  closeAllSidebars();
-
-  const modal = type === "login" ? loginModal : signupModal;
-  modal.classList.add("open");
-  overlay.classList.add("active");
-  document.body.style.overflow = "hidden";
+// Modal functions
+function openModal(modalType) {
+  console.log('Opening modal:', modalType);
+  const modal = document.getElementById(`${modalType}-modal`);
+  if (modal) {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    // Focus on first input if it's the login modal
+    if (modalType === 'login') {
+      setTimeout(() => {
+        const phoneInput = document.getElementById('phone-number');
+        if (phoneInput) {
+          phoneInput.focus();
+          console.log('Focused on phone input');
+        }
+      }, 100);
+    }
+  } else {
+    console.error('Modal not found:', modalType);
+  }
 }
 
-function closeModal(type) {
-  const modal = type === "login" ? loginModal : signupModal;
-  modal.classList.remove("open");
-  overlay.classList.remove("active");
-  document.body.style.overflow = "auto";
+function closeModal(modalType) {
+  console.log('Closing modal:', modalType);
+  const modal = document.getElementById(`${modalType}-modal`);
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    // Reset forms when closing
+    if (modalType === 'login') {
+      resetLoginForms();
+    }
+  }
 }
 
 // Auth functions
@@ -674,9 +743,14 @@ function handleLogout() {
 function checkLoginStatus() {
   const savedUser = localStorage.getItem("nearAndNowUser");
   if (savedUser) {
-    currentUser = JSON.parse(savedUser);
-    isLoggedIn = true;
-    updateAuthUI();
+    try {
+      currentUser = JSON.parse(savedUser);
+      isLoggedIn = true;
+      updateAuthUI();
+    } catch (e) {
+      console.error('Error parsing saved user:', e);
+      localStorage.removeItem('nearAndNowUser');
+    }
   }
 }
 
@@ -726,41 +800,43 @@ function buyNow(itemName) {
 }
 
 // Notification system
-function showNotification(message, type = "info") {
-  const notification = document.createElement("div");
-  notification.className = `notification ${type}`;
-  notification.innerHTML = `
-    <i class="fas fa-${getNotificationIcon(type)}"></i>
-    <span>${message}</span>
-  `;
+function showNotification(message, type = 'info') {
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `fixed top-4 right-4 z-50 p-4 rounded-md shadow-lg max-w-sm transform transition-all duration-300 translate-x-full`;
 
+  // Set colors based on type
+  switch(type) {
+    case 'success':
+      notification.className += ' bg-green-500 text-white';
+      break;
+    case 'error':
+      notification.className += ' bg-red-500 text-white';
+      break;
+    case 'warning':
+      notification.className += ' bg-yellow-500 text-white';
+      break;
+    default:
+      notification.className += ' bg-blue-500 text-white';
+  }
+
+  notification.textContent = message;
   document.body.appendChild(notification);
 
+  // Animate in
   setTimeout(() => {
-    notification.classList.add("show");
+    notification.classList.remove('translate-x-full');
   }, 100);
 
+  // Remove after 3 seconds
   setTimeout(() => {
-    notification.classList.remove("show");
+    notification.classList.add('translate-x-full');
     setTimeout(() => {
-      if (document.body.contains(notification)) {
-        document.body.removeChild(notification);
+      if (notification.parentNode) {
+        notification.parentNode.removeChild(notification);
       }
     }, 300);
   }, 3000);
-}
-
-function getNotificationIcon(type) {
-  switch (type) {
-    case "success":
-      return "check-circle";
-    case "warning":
-      return "exclamation-triangle";
-    case "error":
-      return "times-circle";
-    default:
-      return "info-circle";
-  }
 }
 
 // Animation functions
@@ -803,7 +879,9 @@ function saveUserToStorage() {
 
 // Utility functions
 function updateProductCount(count = products.length) {
-  productCount.textContent = `${count} product${count !== 1 ? "s" : ""}`;
+  // Remove filterTags and productCount DOM references
+  // const filterTags = document.querySelectorAll('.filter-tag');
+  // const productCount = document.getElementById("product-count");
 }
 
 function handleScroll() {
@@ -868,31 +946,31 @@ const notificationStyles = `
     z-index: 10000;
     max-width: 300px;
   }
-  
+
   .notification.show {
     transform: translateX(0);
   }
-  
+
   .notification.success {
     border-left: 4px solid var(--success-color);
     color: var(--success-color);
   }
-  
+
   .notification.warning {
     border-left: 4px solid var(--warning-color);
     color: var(--warning-color);
   }
-  
+
   .notification.error {
     border-left: 4px solid var(--error-color);
     color: var(--error-color);
   }
-  
+
   .notification.info {
     border-left: 4px solid var(--primary-color);
     color: var(--primary-color);
   }
-  
+
   .user-welcome {
     padding: 0.5rem 1rem;
     background: var(--light-bg);
@@ -901,12 +979,12 @@ const notificationStyles = `
     color: var(--text-color);
     font-size: 0.875rem;
   }
-  
+
   .logout-btn {
     background: var(--error-color);
     color: white;
   }
-  
+
   .logout-btn:hover {
     background: #DC2626;
     transform: translateY(-1px);
@@ -958,10 +1036,152 @@ function handleProductActions(e) {
   // This function can be used for future event delegation if needed
 }
 
-// Cart actions - these are handled by onclick attributes in the HTML  
+// Cart actions - these are handled by onclick attributes in the HTML
 function handleCartActions(e) {
   // Cart interactions are handled via onclick attributes
   // This function can be used for future event delegation if needed
 }
 
 // These functions are handled by the existing updateQuantity function above
+
+function renderCategoryGrid() {
+  const categoryGrid = document.getElementById("category-grid");
+  if (!categoryGrid || typeof productsByCategory === 'undefined') return;
+  categoryGrid.innerHTML = '';
+  Object.entries(productsByCategory).forEach(([category, items]) => {
+    if (!items.length) return;
+    const card = document.createElement('div');
+    card.className = 'category-card';
+    card.setAttribute('data-category', category);
+    card.innerHTML = `
+      <img src="${items[0].image}" alt="${category}">
+      <div class="category-name">${category}</div>
+    `;
+    card.addEventListener('click', () => {
+      filterByCategory(category);
+      document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    });
+    categoryGrid.appendChild(card);
+  });
+}
+
+function generateAndSendOTP(phone) {
+  console.log('Generating OTP for phone:', phone);
+
+  // Generate a random 6-digit OTP
+  currentOTP = Math.floor(100000 + Math.random() * 900000).toString();
+
+  // In a real app, this would be sent via SMS
+  console.log('OTP sent to', phone, ':', currentOTP);
+
+  // Show success message
+  showNotification(`OTP sent to +91 ${phone}`, 'success');
+
+  // Switch to OTP form
+  const phoneForm = document.getElementById('phone-form');
+  const otpForm = document.getElementById('otp-form');
+  const phoneDisplay = document.getElementById('phone-display');
+
+  if (phoneForm && otpForm && phoneDisplay) {
+    phoneForm.classList.add('hidden');
+    otpForm.classList.remove('hidden');
+    phoneDisplay.textContent = `+91 ${phone}`;
+
+    // Focus on OTP input
+    setTimeout(() => {
+      const otpInput = document.getElementById('otp-input');
+      if (otpInput) {
+        otpInput.focus();
+        console.log('Focused on OTP input');
+      }
+    }, 100);
+  } else {
+    console.error('Required form elements not found');
+    showNotification('Error: Form elements not found', 'error');
+  }
+}
+
+function verifyOTP(enteredOTP) {
+  console.log('Verifying OTP:', enteredOTP, 'Expected:', currentOTP);
+
+  if (enteredOTP === currentOTP) {
+    // Login successful
+    console.log('Login successful for user:', phoneNumber);
+    showNotification('Login successful!', 'success');
+    isLoggedIn = true;
+    currentUser = {
+      phone: phoneNumber,
+      name: `User ${phoneNumber.slice(-4)}`
+    };
+    saveUserToStorage();
+    updateLoginButton();
+    closeModal('login');
+
+    // Reset forms
+    resetLoginForms();
+  } else {
+    console.log('Invalid OTP entered');
+    showNotification('Invalid OTP. Please try again.', 'error');
+    const otpInput = document.getElementById('otp-input');
+    if (otpInput) {
+      otpInput.value = '';
+      otpInput.focus();
+    }
+  }
+}
+
+function resetLoginForms() {
+  console.log('Resetting login forms');
+  const phoneInput = document.getElementById('phone-number');
+  const otpInput = document.getElementById('otp-input');
+  const phoneForm = document.getElementById('phone-form');
+  const otpForm = document.getElementById('otp-form');
+
+  if (phoneInput) phoneInput.value = '';
+  if (otpInput) otpInput.value = '';
+  if (phoneForm) phoneForm.classList.remove('hidden');
+  if (otpForm) otpForm.classList.add('hidden');
+
+  currentOTP = null;
+  phoneNumber = null;
+}
+
+// Update login button text when user is logged in
+function updateLoginButton() {
+  console.log('Updating login button, isLoggedIn:', isLoggedIn);
+  const loginBtn = document.getElementById('login-btn');
+  if (!loginBtn) {
+    console.error('Login button not found');
+    return;
+  }
+
+  if (isLoggedIn && currentUser) {
+    loginBtn.innerHTML = `
+      <i class="fas fa-user"></i>
+      ${currentUser.name}
+    `;
+    loginBtn.onclick = () => {
+      // Show user menu or logout option
+      if (confirm('Do you want to logout?')) {
+        logout();
+      }
+    };
+    console.log('User logged in, button updated to show:', currentUser.name);
+  } else {
+    loginBtn.innerHTML = `
+      <i class="fas fa-user"></i>
+      Login
+    `;
+    loginBtn.onclick = () => openModal('login');
+    console.log('User not logged in, button updated to show Login');
+  }
+}
+
+function logout() {
+  console.log('Logging out user');
+  isLoggedIn = false;
+  currentUser = null;
+  localStorage.removeItem('nearAndNowUser');
+  updateLoginButton();
+  showNotification('Logged out successfully', 'success');
+}

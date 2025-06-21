@@ -96,7 +96,7 @@
                             <span class="cart-badge">0</span>
                             <button class="action-btn cart-btn" id="cart-icon">
                                 <div class="cart-info">
-                                    <span class="action-text">Cart</span>
+                                    <span class="action-text"><i class="fa-solid fa-cart-shopping"></i></span>
                                     <span class="cart-price">₹0.00</span>
                                 </div>
                             </button>
@@ -152,116 +152,18 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <!-- <section class="hero"> .        ROUNAK ETA TOR JONNE.
-        <div class="hero-pattern"></div>
-        <div class="hero-circles">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
-        </div>
+    <!-- Shop by Category Section -->
+    <section class="shop-by-category" id="shop-by-category">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <span>Premium Quality</span>
-                    </div>
-                    <h1 class="hero-title">Authentic Indian <span class="text-gradient">Groceries</span></h1>
-                    <p class="hero-subtitle">Bringing the flavors of India to your doorstep with our carefully selected
-                        range of premium products.</p>
-
-                    <div class="hero-features">
-                        <div class="feature-item">
-                            <div class="feature-icon-wrapper">
-                                <i class="fas fa-truck-fast"></i>
-                            </div>
-                            <span>Same Day Delivery</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon-wrapper">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <span>100% Fresh Quality</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon-wrapper">
-                                <i class="fas fa-tag"></i>
-                            </div>
-                            <span>Best Price Guarantee</span>
-                        </div>
-                    </div>
-
-                    <div class="hero-actions">
-                        <button class="btn btn-hero" onclick="document.getElementById('products').scrollIntoView()">
-                            Shop Now <i class="fas fa-arrow-right"></i>
-                        </button>
-                        <a href="#about" class="btn btn-outline-hero">
-                            Learn More <i class="fas fa-info-circle"></i>
-                        </a>
-                    </div>
-
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">5000+</span>
-                            <span class="stat-label">Products</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <span class="stat-number">10k+</span>
-                            <span class="stat-label">Happy Customers</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <span class="stat-number">4.8</span>
-                            <span class="stat-label">Customer Rating</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hero-image-container">
-                    <div class="hero-image-wrapper">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3174/3174880.png" alt="Basmati Rice"
-                            class="floating-product product-1">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5769/5769174.png" alt="Turmeric"
-                            class="floating-product product-2">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3082/3082004.png" alt="Spices"
-                            class="floating-product product-3">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2548/2548555.png" alt="Lentils"
-                            class="floating-product product-4">
-                        <div class="hero-image-main">
-                            <div class="image-collage">
-                                <div class="collage-item collage-item-1">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2372/2372241.png"
-                                        alt="Indian Grocery">
-                                </div>
-                                <div class="collage-item collage-item-2">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/1864/1864001.png" alt="Indian Tea">
-                                </div>
-                                <div class="collage-item collage-item-3">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909761.png"
-                                        alt="Fresh Vegetables">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="discount-tag">
-                            <div class="discount-content">
-                                <span class="discount-value">20%</span>
-                                <span class="discount-label">OFF</span>
-                                <span class="discount-text">First Order</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-header">
+                <h2>Shop by Category</h2>
+                <p>Browse our grocery categories</p>
+            </div>
+            <div class="category-grid" id="category-grid">
+                <!-- Categories will be injected by JS -->
             </div>
         </div>
-        <div class="hero-wave">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#F8FAFC" fill-opacity="1"
-                    d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                </path>
-            </svg>
-        </div>
-    </section> -->
+    </section>
 
     <!-- Products Section -->
     <section id="products" class="products-section">
@@ -269,18 +171,8 @@
             <!-- Products Header -->
             <div class="products-header">
                 <div class="products-info">
-                    <div class="breadcrumb">
-                        <span>Home</span>
-                        <i class="fas fa-chevron-right"></i>
-                        <span>All Products</span>
-                    </div>
                     <h2>Indian Groceries</h2>
                     <p>Discover authentic Indian groceries delivered fresh to your doorstep</p>
-                    <div class="products-stats">
-                        <span class="product-count" id="product-count">20 products</span>
-                        <span class="separator">•</span>
-                        <span>7 categories</span>
-                    </div>
                 </div>
 
                 <div class="products-controls">
@@ -294,19 +186,6 @@
                             <option value="rating">Rating: High to Low</option>
                             <option value="discount">Discount</option>
                         </select>
-                    </div>
-
-                    <div class="filter-controls">
-                        <span class="filter-label">Quick Filters:</span>
-                        <div class="filter-tags">
-                            <button class="filter-tag active" data-category="all">All</button>
-                            <button class="filter-tag" data-category="staples">Staples</button>
-                            <button class="filter-tag" data-category="spices">Spices</button>
-                            <button class="filter-tag" data-category="vegetables">Vegetables</button>
-                            <button class="filter-tag" data-category="dairy">Dairy</button>
-                            <button class="filter-tag" data-category="snacks">Snacks</button>
-                            <button class="filter-tag" data-category="beverages">Beverages</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -533,85 +412,63 @@
 
     <!-- Login Modal -->
     <div class="modal" id="login-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Login</h2>
-                <button class="close-modal" id="close-login-modal">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="login-form">
-                    <div class="form-group">
-                        <label for="login-email">Email</label>
-                        <input type="email" id="login-email" placeholder="Enter your email" required>
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+            <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                <div class="mt-3">
+                    <!-- Header -->
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Login with Phone</h3>
+                        <button class="close-modal text-gray-400 hover:text-gray-600" id="close-login-modal">
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label for="login-password">Password</label>
-                        <input type="password" id="login-password" placeholder="Enter your password" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember-me">
-                            <label for="remember-me">Remember me</label>
+
+                    <!-- Phone Number Form -->
+                    <form id="phone-form" class="space-y-4">
+                        <div>
+                            <label for="phone-number" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <div class="flex">
+                                <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                                    +91
+                                </span>
+                                <input type="tel" id="phone-number" placeholder="Enter your phone number" required
+                                       class="flex-1 min-w-0 block w-full px-3 py-2 rounded-none rounded-r-md focus:ring-blue-500 focus:border-blue-500 text-sm border border-gray-300">
+                            </div>
                         </div>
-                        <a href="#" class="forgot-password">Forgot password?</a>
+                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Send OTP
+                        </button>
+                    </form>
+
+                    <!-- OTP Verification Form (Initially Hidden) -->
+                    <form id="otp-form" class="space-y-4 hidden">
+                        <div class="text-center mb-4">
+                            <p class="text-sm text-gray-600">We've sent a 6-digit OTP to</p>
+                            <p class="text-sm font-medium text-gray-900" id="phone-display"></p>
+                        </div>
+                        <div>
+                            <label for="otp-input" class="block text-sm font-medium text-gray-700 mb-2">Enter OTP</label>
+                            <input type="text" id="otp-input" placeholder="Enter 6-digit OTP" maxlength="6" required
+                                   class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm text-center tracking-widest">
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs text-gray-500">Didn't receive OTP?</p>
+                            <button type="button" id="resend-otp" class="text-xs text-blue-600 hover:text-blue-500 font-medium">
+                                Resend OTP
+                            </button>
+                        </div>
+                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Verify OTP
+                        </button>
+                    </form>
+
+                    <div class="mt-6 text-center">
+                        <p class="text-xs text-gray-500">By continuing, you agree to our Terms of Service and Privacy Policy</p>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Login</button>
-                </form>
-                <div class="divider">
-                    <span>Or login with</span>
-                </div>
-                <div class="auth-switch">
-                    <p>Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Sign Up Modal -->
-    <!-- <div class="modal" id="signup-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Create Account</h2>
-                <button class="close-modal" id="close-signup-modal">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="signup-form">
-                    <div class="form-group">
-                        <label for="signup-name">Full Name</label>
-                        <input type="text" id="signup-name" placeholder="Enter your full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="signup-email">Email</label>
-                        <input type="email" id="signup-email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="signup-password">Password</label>
-                        <input type="password" id="signup-password" placeholder="Create a password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="signup-confirm-password">Confirm Password</label>
-                        <input type="password" id="signup-confirm-password" placeholder="Confirm your password"
-                            required>
-                    </div>
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="terms" required>
-                        <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
-                </form>
-                <div class="divider">
-                    <span>Or sign up with</span>
-                </div>
-                <div class="auth-switch">
-                    <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
@@ -623,6 +480,7 @@
 
     <script src="products-data.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.0.6/lib.min.js" integrity="sha512-C+dW2Ke4iFH+nW1dU3XyaM/KHHwssWrKeixWus6Bv9lwJZceI94t73nIvm7tVp9Vcm0RCMQx1EISC2tQwREo1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

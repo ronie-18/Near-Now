@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Near & Now Indian Grocery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <!-- ... header content ... -->
+    </header>
+
+    <main class="products-main-bg">
+        <div class="container products-container">
+            <!-- Sidebar -->
+            <aside class="products-sidebar">
+                <div class="sidebar-section">
+                    <h3>Categories</h3>
+                    <ul class="sidebar-categories" id="sidebar-categories">
+                        <!-- Categories will be injected by JS -->
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Price</h3>
+                    <div class="sidebar-price-range">
+                        <input type="range" min="0" max="1000" value="0" id="price-range">
+                        <div class="price-values">
+                            <span id="min-price">₹0</span> - <span id="max-price">₹1000</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more filter sections as needed -->
+            </aside>
+
+            <!-- Main Content -->
+            <section class="products-content">
+                <div class="products-topbar">
+                    <div class="products-count" id="products-count">All Products</div>
+                    <div class="products-sort">
+                        <label for="sort-select"><i class="fas fa-sort"></i> Sort by:</label>
+                        <select class="sort-select" id="sort-select">
+                            <option value="default">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                            <option value="rating">Rating: High to Low</option>
+                            <option value="discount">Discount</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="products-grid" id="all-products-grid">
+                    <!-- Product cards will be injected by JS -->
+                </div>
+                <div class="pagination" id="pagination">
+                    <!-- Pagination buttons will be injected by JS -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <!-- ... footer content ... -->
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+    <script src="products-page.js"></script>
+</body>
+</html>
