@@ -13,27 +13,19 @@ A modern, responsive e-commerce website for an Indian grocery store, built with 
   - Loading screen with brand animation
 
 - **Shopping Experience**
-  - Product categorization
-  - Search functionality with trending suggestions
+  - Product categorization (Staples, Spices, Dairy, Snacks, Beverages)
+  - Search functionality
   - Product filtering and sorting
-  - Grid and list view options
-  - Shopping cart with real-time updates
-  - Wishlist functionality
+  - Shopping cart with real-time updates (local storage)
+  - Wishlist functionality (local storage)
 
 - **User Features**
-  - User authentication (Login/Signup)
-  - Newsletter subscription
-  - Social media integration
-  - Order tracking
-  - Multiple payment options
+  - Login modal (UI only, no backend authentication)
+  - Newsletter subscription UI (no backend integration)
 
-- **Product Categories**
-  - Staples
-  - Spices
-  - Vegetables
-  - Dairy
-  - Snacks
-  - Beverages
+- **Other**
+  - Mobile-first responsive design
+  - Accessible navigation and keyboard shortcuts
 
 ## 🛠️ Technical Features
 
@@ -57,9 +49,8 @@ A modern, responsive e-commerce website for an Indian grocery store, built with 
 
 - **JavaScript Features**
   - Dynamic content loading
-  - Cart management
-  - Form validation
-  - Local storage integration
+  - Cart and wishlist management (local storage)
+  - Product filtering, sorting, and search
   - Event handling
 
 ## 🎨 Design System
@@ -113,12 +104,17 @@ npx serve
 ## 📂 Project Structure
 
 ```
-near-and-now/
-├── index.html          # Main HTML file
-├── styles.css          # Main stylesheet
-├── script.js          # JavaScript functionality
-├── README.md          # Documentation
-└── assets/            # Images and other assets
+Near-Now/
+├── index.html           # Main landing page
+├── products.html        # All products page
+├── styles.css           # Main stylesheet
+├── script.js            # JavaScript functionality (main site)
+├── products-data.js     # Product data (categories, details)
+├── products-page.js     # JavaScript for products.html
+├── app.py               # (Optional) Python backend for future use
+├── README.md            # Documentation
+├── LICENSE              # License file
+└── note.txt             # Project notes
 ```
 
 ## 🛠️ Development
@@ -143,13 +139,11 @@ near-and-now/
 - Edge (latest)
 - Opera (latest)
 
-## 🔒 Security Features
+## 🔒 Security Notes
 
-- Form validation
-- Secure payment integration
-- Protected user data
-- HTTPS ready
-- Input sanitization
+- Form validation is basic and client-side only
+- No real payment or order tracking integration
+- No backend authentication or user data storage
 
 ## 🤝 Contributing
 
@@ -169,17 +163,16 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🙏 Acknowledgments
 
-- Font Awesome for icons
 - Flaticon for product images
 - Google Fonts for typography
+- Font Awesome for icons
 
 ## 📞 Contact
 
 For any queries or support, please contact:
 - Email: support@nearandnow.com
-- Phone: +91 98765 43210
 - Website: www.nearandnow.com
 
 ---
 
-Made with ❤️ by [Your Name] 
+Made with ❤️ by [Your Name]
