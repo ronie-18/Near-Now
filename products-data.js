@@ -3,7 +3,7 @@ const productsByCategory = {
   staples: [
     {
       "name": "Basmati Rice",
-      "image": "https://cdn-icons-png.flaticon.com/512/3174/3174880.png",
+      "image": "https://img.freepik.com/free-photo/top-view-raw-rice-inside-plate-dark-desk_179666-27235.jpg?semt=ais_hybrid&w=740",
       "description": "Premium long-grain basmati rice, 5kg pack. Perfect for biryanis and pulao.",
       "price": "₹450",
       "originalPrice": "₹500",
@@ -14,7 +14,7 @@ const productsByCategory = {
     },
     {
       "name": "Toor Dal",
-      "image": "https://cdn-icons-png.flaticon.com/512/2548/2548555.png",
+      "image": "https://familyemart.com/wp-content/uploads/2024/08/toor-dal-dry.png",
       "description": "Yellow split pigeon peas, 1kg pack. Rich in protein and essential nutrients.",
       "price": "₹160",
       "originalPrice": "₹180",
@@ -25,7 +25,7 @@ const productsByCategory = {
     },
     {
       "name": "Whole Wheat Atta",
-      "image": "https://cdn-icons-png.flaticon.com/512/2515/2515274.png",
+      "image": "https://w7.pngwing.com/pngs/521/890/png-transparent-atta-flour-maida-flour-bakery-bread-flour-food-bread-superfood-thumbnail.png",
       "description": "Whole wheat flour, 5kg pack. Stone ground for better nutrition.",
       "price": "₹250",
       "originalPrice": "₹280",
@@ -36,7 +36,7 @@ const productsByCategory = {
     },
     {
       "name": "Chana Dal",
-      "image": "https://cdn-icons-png.flaticon.com/512/2548/2548555.png",
+      "image": "https://t3.ftcdn.net/jpg/08/70/25/74/360_F_870257492_9Sn0NTaLMyURnHmhknUN0KQ3DYG6lw5t.jpg",
       "description": "Split Bengal gram, 1kg pack. High protein content and great taste.",
       "price": "₹130",
       "originalPrice": "₹150",
@@ -46,11 +46,11 @@ const productsByCategory = {
       "discount": 13
     }
   ],
-  
+
   spices: [
     {
       "name": "Turmeric Powder",
-      "image": "https://cdn-icons-png.flaticon.com/512/5769/5769174.png",
+      "image": "https://www.viralspices.com/wp-content/uploads/2024/11/Untitled-1-624x312.jpg",
       "description": "Pure organic turmeric powder, 100g pack. Natural anti-inflammatory properties.",
       "price": "₹45",
       "originalPrice": "₹55",
@@ -61,7 +61,7 @@ const productsByCategory = {
     },
     {
       "name": "Garam Masala",
-      "image": "https://cdn-icons-png.flaticon.com/512/3081/3081986.png",
+      "image": "https://img.favpng.com/18/10/21/indian-cuisine-spice-mix-garam-masala-food-png-favpng-XQkNqYG2guqW8XfQze5n9Q2yw.jpg",
       "description": "Authentic blend of ground spices, 100g pack. Perfect for Indian curries.",
       "price": "₹85",
       "originalPrice": "₹95",
@@ -72,7 +72,7 @@ const productsByCategory = {
     },
     {
       "name": "Red Chili Powder",
-      "image": "https://cdn-icons-png.flaticon.com/512/5769/5769174.png",
+      "image": "https://t4.ftcdn.net/jpg/06/68/59/49/360_F_668594985_30FQV0Mhp8TDVpFQWHYG0QuGM99zChDp.jpg",
       "description": "Premium quality red chili powder, 200g pack. Adds perfect heat to dishes.",
       "price": "₹75",
       "originalPrice": "₹85",
@@ -83,7 +83,7 @@ const productsByCategory = {
     },
     {
       "name": "Cardamom",
-      "image": "https://cdn-icons-png.flaticon.com/512/5769/5769174.png",
+      "image": "https://www.pngplay.com/wp-content/uploads/7/Cardamom-PNG-Photos.png",
       "description": "Premium green cardamom, 50g pack. Aromatic spice for desserts.",
       "price": "₹320",
       "originalPrice": "₹350",
@@ -93,11 +93,11 @@ const productsByCategory = {
       "discount": 9
     }
   ],
-  
+
   dairy: [
     {
       "name": "Fresh Paneer",
-      "image": "https://cdn-icons-png.flaticon.com/512/2515/2515274.png",
+      "image": "https://img.freepik.com/premium-photo/paneer-isolated-white-background-generative-ai_21085-38553.jpg?semt=ais_hybrid&w=740",
       "description": "Fresh cottage cheese, 200g pack. Made daily with pure milk.",
       "price": "₹80",
       "originalPrice": "₹90",
@@ -108,7 +108,7 @@ const productsByCategory = {
     },
     {
       "name": "Pure Cow Ghee",
-      "image": "https://cdn-icons-png.flaticon.com/512/2515/2515274.png",
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/3/399027791/HJ/LK/FV/15095982/pure-cow-ghee-500x500.jpg",
       "description": "Pure cow ghee, 500ml jar. Traditional churned for authentic taste.",
       "price": "₹450",
       "originalPrice": "₹520",
@@ -119,7 +119,7 @@ const productsByCategory = {
     },
     {
       "name": "Coconut Oil",
-      "image": "https://cdn-icons-png.flaticon.com/512/2515/2515274.png",
+      "image": "https://t3.ftcdn.net/jpg/06/38/49/08/360_F_638490855_Xc9sCWftHHJ5mYpjqKne7W4IxlWDUOqd.jpg",
       "description": "Pure coconut oil, 500ml bottle. Cold-pressed for maximum nutrition.",
       "price": "₹180",
       "originalPrice": "₹200",
@@ -129,11 +129,11 @@ const productsByCategory = {
       "discount": 10
     }
   ],
-  
+
   vegetables: [
     {
       "name": "Onions",
-      "image": "https://cdn-icons-png.flaticon.com/512/765/765560.png",
+      "image": "https://i.pinimg.com/736x/df/b2/8b/dfb28b96f1dc9cf2dce282cda2b57701.jpg",
       "description": "Fresh red onions, 1kg pack. Essential for Indian cooking.",
       "price": "₹40",
       "originalPrice": "₹50",
@@ -144,7 +144,7 @@ const productsByCategory = {
     },
     {
       "name": "Potatoes",
-      "image": "https://cdn-icons-png.flaticon.com/512/590/590779.png",
+      "image": "https://w7.pngwing.com/pngs/186/818/png-transparent-brown-potatoes-illustration-potato-potato-food-smoothie-gym.png",
       "description": "Fresh potatoes, 2kg pack. Versatile vegetable for various dishes.",
       "price": "₹60",
       "originalPrice": "₹70",
@@ -155,7 +155,7 @@ const productsByCategory = {
     },
     {
       "name": "Tomatoes",
-      "image": "https://cdn-icons-png.flaticon.com/512/765/765557.png",
+      "image": "https://freepngimg.com/download/tomato/159306-fresh-photos-tomatoes-bunch-free-photo.png",
       "description": "Fresh ripe tomatoes, 1kg pack. Perfect for curries and salads.",
       "price": "₹35",
       "originalPrice": "₹45",
@@ -165,11 +165,11 @@ const productsByCategory = {
       "discount": 22
     }
   ],
-  
+
   snacks: [
     {
       "name": "Masala Papad",
-      "image": "https://cdn-icons-png.flaticon.com/512/3081/3081986.png",
+      "image": "https://5.imimg.com/data5/SELLER/Default/2025/3/494508142/NP/WE/CR/16142548/urad-masala-papad.png",
       "description": "Spicy lentil wafers, 200g pack. Crispy and flavorful snack.",
       "price": "₹60",
       "originalPrice": "₹70",
@@ -180,7 +180,7 @@ const productsByCategory = {
     },
     {
       "name": "Namkeen Mix",
-      "image": "https://cdn-icons-png.flaticon.com/512/3081/3081986.png",
+      "image": "https://png.pngtree.com/png-vector/20240812/ourlarge/pngtree-explore-the-flavors-of-indian-crunchy-mix-namkeen-png-image_13452116.png",
       "description": "Assorted namkeen mix, 250g pack. Perfect tea-time snack.",
       "price": "₹95",
       "originalPrice": "₹110",
@@ -190,11 +190,11 @@ const productsByCategory = {
       "discount": 14
     }
   ],
-  
+
   beverages: [
     {
       "name": "Assam Tea Powder",
-      "image": "https://cdn-icons-png.flaticon.com/512/924/924915.png",
+      "image": "https://img.favpng.com/10/5/0/assam-tea-tea-leaf-grading-green-tea-black-tea-png-favpng-PnS4rCcZ8HWXN43QWhHEjQHWf.jpg",
       "description": "Premium Assam tea leaves, 250g pack. Strong and aromatic blend.",
       "price": "₹120",
       "originalPrice": "₹140",
@@ -236,4 +236,4 @@ function getAvailableCategories() {
 }
 
 // Main products array for backward compatibility
-const products = getAllProducts(); 
+const products = getAllProducts();
